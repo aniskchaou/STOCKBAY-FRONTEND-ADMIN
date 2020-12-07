@@ -15,10 +15,23 @@ import { StockComponent } from './content/stock/stock.component';
 import { CategoryComponent } from './content/category/category.component';
 import { BuyComponent } from './content/buy/buy.component';
 import { SaleComponent } from './content/sale/sale.component';
+import { DashboardComponent } from './content/dashboard/dashboard.component';
+import { ConfigurationComponent } from './content/configuration/configuration.component';
 
 const routes:Routes=[
   {path:'category',component:CategoryComponent,pathMatch:'full'},
   {path:'buy',component:BuyComponent,pathMatch:'full'},
+  {path:'category',component:CategoryComponent,pathMatch:'full'},
+  {path:'client',component:ClientComponent,pathMatch:'full'},
+  {path:'employee',component:EmployeeComponent,pathMatch:'full'},
+  {path:'expense',component:ExpenseComponent,pathMatch:'full'},
+  {path:'product',component:ProductComponent,pathMatch:'full'},
+  {path:'revenue',component:RevenueComponent,pathMatch:'full'},
+  {path:'sale',component:SaleComponent,pathMatch:'full'},
+  {path:'stock',component:StockComponent,pathMatch:'full'},
+  {path:'supplier',component:SupplierComponent,pathMatch:'full'},
+  {path:'dashboard',component:DashboardComponent,pathMatch:'full'},
+  {path:'configuration',component:ConfigurationComponent,pathMatch:'full'},
   {path:'',redirectTo:'invoice',pathMatch:'full'},
   {path:'**',redirectTo:'invoice',pathMatch:'full'}]
 
