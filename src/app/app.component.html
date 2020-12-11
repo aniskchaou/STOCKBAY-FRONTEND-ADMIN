@@ -1,5 +1,5 @@
  <!-- Sidenav -->
-  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <nav *ngIf="!hasRoute('login')" class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner">
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
@@ -18,7 +18,7 @@
     </div>
   </nav>
   <!-- Main content -->
-  <div class="main-content" id="panel">
+  <div class="main-content" id="panel" *ngIf="!hasRoute('login')">
     <!-- Topnav -->
     <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
       <div class="container-fluid">
@@ -212,6 +212,66 @@
       </footer>
     </div>
   </div>
+
+
+
+
+<br><br>
+
+  <div *ngIf="hasRoute('login')">
+    <div class="container mt--8 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+          <div class="card bg-secondary border-0 mb-0">
+            <div class="card-header bg-transparent pb-5">
+              <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
+              <br><br>
+              <div class="btn-wrapper text-center">
+                <img width="70" height="70" src="assets/img/logo.png" style="max-height: 80px;" class="navbar-brand-img" alt="...">
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <small>login : admin / mp : admin</small>
+              </div>
+              <form role="form" action="/dashboard">
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Email" type="text" value="admin">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Password" type="password" value="adùin">
+                  </div>
+                </div>
+              
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary my-4">Connexion</button>
+                </div>
+              </form>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="assets/vendor/jquery/dist/jquery.min.js"></script>

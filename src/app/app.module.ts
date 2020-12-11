@@ -17,6 +17,7 @@ import { BuyComponent } from './content/buy/buy.component';
 import { SaleComponent } from './content/sale/sale.component';
 import { DashboardComponent } from './content/dashboard/dashboard.component';
 import { ConfigurationComponent } from './content/configuration/configuration.component';
+import { LoginComponent } from './content/login/login.component';
 
 const routes:Routes=[
   {path:'category',component:CategoryComponent,pathMatch:'full'},
@@ -31,9 +32,10 @@ const routes:Routes=[
   {path:'stock',component:StockComponent,pathMatch:'full'},
   {path:'supplier',component:SupplierComponent,pathMatch:'full'},
   {path:'dashboard',component:DashboardComponent,pathMatch:'full'},
+  {path:'login',component:LoginComponent,pathMatch:'full'},
   {path:'configuration',component:ConfigurationComponent,pathMatch:'full'},
-  {path:'',redirectTo:'invoice',pathMatch:'full'},
-  {path:'**',redirectTo:'invoice',pathMatch:'full'}]
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'**',redirectTo:'login',pathMatch:'full'}]
 
 
 @NgModule({
