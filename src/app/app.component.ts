@@ -45,7 +45,7 @@ private loadScripts() {
   title = 'my-app-angular';
  
   ngOnInit() {
-   this.loadScripts();
+  // this.loadScripts();
   }
 
   public router: string;

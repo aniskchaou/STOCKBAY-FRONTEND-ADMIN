@@ -18,6 +18,8 @@ import { SaleComponent } from './content/sale/sale.component';
 import { DashboardComponent } from './content/dashboard/dashboard.component';
 import { ConfigurationComponent } from './content/configuration/configuration.component';
 import { LoginComponent } from './content/login/login.component';
+import { ProfileComponent } from './content/profile/profile.component';
+import { EditprofileComponent } from './content/editprofile/editprofile.component';
 
 const routes:Routes=[
   {path:'category',component:CategoryComponent,pathMatch:'full'},
@@ -34,6 +36,8 @@ const routes:Routes=[
   {path:'dashboard',component:DashboardComponent,pathMatch:'full'},
   {path:'login',component:LoginComponent,pathMatch:'full'},
   {path:'configuration',component:ConfigurationComponent,pathMatch:'full'},
+  {path:'profile',component:ProfileComponent,pathMatch:'full'},
+  {path:'editprofile',component:EditprofileComponent,pathMatch:'full'},
   {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'**',redirectTo:'login',pathMatch:'full'}]
 
@@ -52,6 +56,8 @@ const routes:Routes=[
     CategoryComponent,
     BuyComponent,
     SaleComponent,
+    ProfileComponent,
+    EditprofileComponent,
     
   ],
   imports: [
