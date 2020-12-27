@@ -5,21 +5,54 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './template/navigation/navigation.component';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
-import { ProductComponent } from './content/product/product.component';
-import { SupplierComponent } from './content/supplier/supplier.component';
-import { ClientComponent } from './content/client/client.component';
-import { EmployeeComponent } from './content/employee/employee.component';
-import { RevenueComponent } from './content/revenue/revenue.component';
-import { ExpenseComponent } from './content/expense/expense.component';
-import { StockComponent } from './content/stock/stock.component';
-import { CategoryComponent } from './content/category/category.component';
-import { BuyComponent } from './content/buy/buy.component';
-import { SaleComponent } from './content/sale/sale.component';
-import { DashboardComponent } from './content/dashboard/dashboard.component';
-import { ConfigurationComponent } from './content/configuration/configuration.component';
-import { LoginComponent } from './content/login/login.component';
-import { ProfileComponent } from './content/profile/profile.component';
-import { EditprofileComponent } from './content/editprofile/editprofile.component';
+import { AddBuyComponent } from './modules/buy/components/add-buy/add-buy.component';
+import { BuyComponent } from './modules/buy/components/buy/buy.component';
+import { EditBuyComponent } from './modules/buy/components/edit-buy/edit-buy.component';
+import { ViewBuyComponent } from './modules/buy/components/view-buy/view-buy.component';
+import { AddCategoryComponent } from './modules/category/components/add-category/add-category.component';
+import { CategoryComponent } from './modules/category/components/category/category.component';
+import { EditCategoryComponent } from './modules/category/components/edit-category/edit-category.component';
+import { ViewCategoryComponent } from './modules/category/components/view-category/view-category.component';
+import { AddClientComponent } from './modules/client/components/add-client/add-client.component';
+import { ClientComponent } from './modules/client/components/client/client.component';
+import { EditClientComponent } from './modules/client/components/edit-client/edit-client.component';
+import { ViewClientComponent } from './modules/client/components/view-client/view-client.component';
+import { AddEmployeeComponent } from './modules/employee/components/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './modules/employee/components/edit-employee/edit-employee.component';
+import { EmployeeComponent } from './modules/employee/components/employee/employee.component';
+import { ViewEmployeeComponent } from './modules/employee/components/view-employee/view-employee.component';
+import { AddExpenseComponent } from './modules/expense/components/add-expense/add-expense.component';
+import { EditExpenseComponent } from './modules/expense/components/edit-expense/edit-expense.component';
+import { ExpenseComponent } from './modules/expense/components/expense/expense.component';
+import { ViewExpenseComponent } from './modules/expense/components/view-expense/view-expense.component';
+import { ConfigurationComponent } from './modules/general/components/configuration/configuration.component';
+import { DashboardComponent } from './modules/general/components/dashboard/dashboard.component';
+import { EditprofileComponent } from './modules/general/components/editprofile/editprofile.component';
+import { LoginComponent } from './modules/general/components/login/login.component';
+import { ProfileComponent } from './modules/general/components/profile/profile.component';
+import { AddIncomeComponent } from './modules/income/components/add-income/add-income.component';
+import { EditIncomeComponent } from './modules/income/components/edit-income/edit-income.component';
+import { ViewIncomeComponent } from './modules/income/components/view-income/view-income.component';
+import { AddProductComponent } from './modules/product/components/add-product/add-product.component';
+import { ProductComponent } from './modules/product/components/product/product.component';
+import { ViewProductComponent } from './modules/product/components/view-product/view-product.component';
+import { EditRevenueComponent } from './modules/revenue/components/edit-revenue/edit-revenue.component';
+import { RevenueComponent } from './modules/revenue/components/revenue/revenue.component';
+import { ViewRevenueComponent } from './modules/revenue/components/view-revenue/view-revenue.component';
+import { EditSaleComponent } from './modules/sale/components/edit-sale/edit-sale.component';
+import { SaleComponent } from './modules/sale/components/sale/sale.component';
+import { ViewSaleComponent } from './modules/sale/components/view-sale/view-sale.component';
+import { AddSellComponent } from './modules/sell/components/add-sell/add-sell.component';
+import { EditSellComponent } from './modules/sell/components/edit-sell/edit-sell.component';
+import { ViewSellComponent } from './modules/sell/components/view-sell/view-sell.component';
+import { EditStockComponent } from './modules/stock/components/edit-stock/edit-stock.component';
+import { StockComponent } from './modules/stock/components/stock/stock.component';
+import { ViewStockComponent } from './modules/stock/components/view-stock/view-stock.component';
+import { AddSupplierComponent } from './modules/supplier/components/add-supplier/add-supplier.component';
+import { EditSupplierComponent } from './modules/supplier/components/edit-supplier/edit-supplier.component';
+import { SupplierComponent } from './modules/supplier/components/supplier/supplier.component';
+import { ViewSupplierComponent } from './modules/supplier/components/view-supplier/view-supplier.component';
+
 
 const routes:Routes=[
   {path:'category',component:CategoryComponent,pathMatch:'full'},
@@ -58,6 +91,38 @@ const routes:Routes=[
     SaleComponent,
     ProfileComponent,
     EditprofileComponent,
+    AddProductComponent,
+    AddSupplierComponent,
+    AddClientComponent,
+    AddEmployeeComponent,
+    AddIncomeComponent,
+    AddExpenseComponent,
+    AddCategoryComponent,
+    AddBuyComponent,
+    AddSellComponent,
+    EditBuyComponent,
+    EditCategoryComponent,
+    EditClientComponent,
+    EditEmployeeComponent,
+    EditExpenseComponent,
+    EditIncomeComponent,
+    EditRevenueComponent,
+    EditSaleComponent,
+    EditSellComponent,
+    EditStockComponent,
+    EditSupplierComponent,
+    ViewBuyComponent,
+    ViewCategoryComponent,
+    ViewClientComponent,
+    ViewEmployeeComponent,
+    ViewExpenseComponent,
+    ViewIncomeComponent,
+    ViewProductComponent,
+    ViewRevenueComponent,
+    ViewSaleComponent,
+    ViewSellComponent,
+    ViewStockComponent,
+    ViewSupplierComponent,
     
   ],
   imports: [
