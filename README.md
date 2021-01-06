@@ -1,18 +1,21 @@
-# Managem
+# Stockbay
 
-Managem is a web application for managing projects.
+Stockbay is a web application for managing stock for supply stores
 
-## Informations
-
+## Information:
 - Status: under development
-- Version: 1.0
-- Sector: industry
+- latest version 1.0
+- Industry sector
 - Created: November 2020
 - Last updated: December 2020
 
-## Features:
-- Manage projects
-- Manage tasks
-- Manage users
-- Manage notes
+## Modules:
+- Manage products by categories
+- Manage purchases
+- Manage sales
+- Classify suppliers
 - Manage clients
+- Manage employees
+- Manage income
+- Manage expenses
+- Manage inventory
