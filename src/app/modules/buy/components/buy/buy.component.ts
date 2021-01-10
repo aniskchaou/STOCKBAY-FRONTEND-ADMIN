@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { URLLoader } from './../../../configs/URLLoader';
 
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.css']
 })
-export class BuyComponent implements OnInit {
+export class BuyComponent extends URLLoader implements OnInit {
 
-  constructor() { }
+  showsummary:boolean=false
+  showgraphic:boolean=false
+  
+  constructor() {
+    super()
+   }
+  
 
-  ngOnInit(): void {
-  }
-
+ngOnInit() {
+ super.loadScripts();
+}
 }

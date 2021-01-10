@@ -52,6 +52,8 @@ import { AddSupplierComponent } from './modules/supplier/components/add-supplier
 import { EditSupplierComponent } from './modules/supplier/components/edit-supplier/edit-supplier.component';
 import { SupplierComponent } from './modules/supplier/components/supplier/supplier.component';
 import { ViewSupplierComponent } from './modules/supplier/components/view-supplier/view-supplier.component';
+import { EditProductComponent } from './modules/product/components/edit-product/edit-product.component';
+import { AddRevenueComponent } from './add-revenue/add-revenue.component';
 
 
 const routes:Routes=[
@@ -123,6 +125,8 @@ const routes:Routes=[
     ViewSellComponent,
     ViewStockComponent,
     ViewSupplierComponent,
+    EditProductComponent,
+    AddRevenueComponent,
     
   ],
   imports: [

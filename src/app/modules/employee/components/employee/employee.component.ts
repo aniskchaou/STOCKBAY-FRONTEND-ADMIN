@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { URLLoader } from './../../../configs/URLLoader';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
 })
-export class EmployeeComponent implements OnInit {
+export class EmployeeComponent extends URLLoader implements OnInit {
 
-  constructor() { }
+  showsummary:boolean=false
+  showgraphic:boolean=false
+  
+  constructor() {
+    super()
+   }
+  
 
-  ngOnInit(): void {
-  }
+ngOnInit() {
+ super.loadScripts();
+}
 
 }

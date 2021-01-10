@@ -23,12 +23,21 @@
                     <td scope="col" class="sort" data-sort="status">founisseur1</td>
                     <td scope="col">2331</td>
                     <td scope="col" class="sort" data-sort="completion">5</td>
-                    
-< <td><button type="button" data-toggle="modal" data-target="#viewProduct" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
+                    <td><button type="button" data-toggle="modal" data-target="#viewProduct" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
     <button type="button" data-toggle="modal" data-target="#editProduct"class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
     <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
                 </tr>
             </tbody>
+            <tfoot class="thead-light">
+              <tr>
+                  <th scope="col" class="sort" data-sort="name">Nom</th>
+                  <th scope="col" class="sort" data-sort="budget">Categorie</th>
+                  <th scope="col" class="sort" data-sort="status">Fournisseur</th>
+                  <th scope="col">Prix</th>
+                  <th scope="col" class="sort" data-sort="completion">Quantité</th>
+                  <th scope="col">Actions</th>
+              </tr>
+            </tfoot>
         </table>
         <button  data-toggle="modal" data-target="#addProduct" type="button" class="btn btn-success btn-sm">Ajouter</button>
 
