@@ -21,18 +21,30 @@
       <tbody class="list">
         <tr>
           <td scope="col" class="sort" data-sort="name">Hp</td>
-          <td scope="col" class="sort" data-sort="budget">Star</td>
-          <td scope="col" class="sort" data-sort="status">valide</td>
+          <td scope="col" class="sort" data-sort="budget">Star  Computer</td>
+          <td scope="col" class="sort" data-sort="status">Ative</td>
           <td scope="col">5</td>
-          <td scope="col" class="sort" data-sort="completion">12.00</td>
-          <td scope="col">22.000</td>
+          <td scope="col" class="sort" data-sort="completion">1287 $</td>
+          <td scope="col">22.000 $</td>
           <td scope="col">12/22/2020</td>
           
-          <td><button type="button" data-toggle="modal" data-target="#viewBuy" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
+          <td>
             <button type="button" data-toggle="modal" data-target="#editBuy" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
             <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
         </tr>
       </tbody>
+      <tfoot class="thead-light">
+        <tr>
+          <th scope="col" class="sort" data-sort="name">Nom</th>
+          <th scope="col" class="sort" data-sort="budget">Fournisseur</th>
+          <th scope="col" class="sort" data-sort="status">Statut</th>
+          <th scope="col">Quantité</th>
+          <th scope="col" class="sort" data-sort="completion">Prix</th>
+          <th scope="col">Total</th>
+          <th scope="col">Date</th>
+          <th>Actions</th>
+        </tr>
+      </tfoot>
     </table>
     <button data-toggle="modal" data-target="#addBuy"  type="button" class="btn btn-success btn-sm">Ajouter</button>
   
@@ -50,7 +62,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+              
           </div>
         </div>
       </div>
@@ -70,7 +82,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+              
           </div>
         </div>
       </div>
@@ -90,7 +102,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+              
           </div>
         </div>
       </div>
@@ -101,29 +113,5 @@
   
   </div>
   <!-- Card footer -->
-  <div class="card-footer py-4">
-    <nav aria-label="...">
-      <ul class="pagination justify-content-end mb-0">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1">
-            <i class="fas fa-angle-left"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item active">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">
-            <i class="fas fa-angle-right"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+
 </div>
