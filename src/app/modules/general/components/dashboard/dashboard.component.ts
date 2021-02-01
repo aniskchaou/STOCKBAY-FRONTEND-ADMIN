@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
-import { URLLoader } from './../../../configs/URLLoader';
+import { URLLoader } from '../../../../main/configs/URLLoader';
 
 @Component({
   selector: 'app-dashboard',
@@ -58,7 +58,8 @@ ngOnInit(): void {
   var ctx1 = document.getElementsByClassName("revenue-chart");
   var ctx2 = document.getElementsByClassName("product-chart");
   this.renderChart(data, labels,ctx1,'rgba(204, 0, 0, 1)');
-  this.renderChart(data2, labels,ctx2,'rgba(24, 0, 204, 1)');
+  this.renderChart(data2, labels, ctx2, 'rgba(24, 0, 204, 1)');
+  super.show('StockBay', 'Cette application est en cours de développement.', 'info')
 }
 
 

@@ -46,6 +46,7 @@ private loadScripts() {
  
   ngOnInit() {
   // this.loadScripts();
+
   }
 
   public router: string;

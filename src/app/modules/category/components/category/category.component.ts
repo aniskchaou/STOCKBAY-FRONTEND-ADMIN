@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { URLLoader } from './../../../configs/URLLoader';
-
+import { URLLoader } from '../../../../main/configs/URLLoader';
+import showMessage from '../../../../main/notification/notification'
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -16,7 +16,8 @@ export class CategoryComponent extends URLLoader implements OnInit {
    }
   
 
-ngOnInit() {
+  ngOnInit() {
+
  super.loadScripts();
 }
 

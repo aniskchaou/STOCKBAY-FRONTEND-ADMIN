@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { URLLoader } from 'src/app/main/configs/URLLoader';
 
 @Component({
   selector: 'app-add-sell',
   templateUrl: './add-sell.component.html',
   styleUrls: ['./add-sell.component.css']
 })
-export class AddSellComponent implements OnInit {
+export class AddSellComponent extends URLLoader implements OnInit {
 
-  constructor() { }
+  constructor() { super() }
 
   ngOnInit(): void {
   }
 
+  add() {
+    super.show('StockBay', 'cette fonctionnalité est en cours de développement.', 'warning')
+  }
 }
