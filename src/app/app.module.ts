@@ -54,6 +54,7 @@ import { SupplierComponent } from './modules/supplier/components/supplier/suppli
 import { ViewSupplierComponent } from './modules/supplier/components/view-supplier/view-supplier.component';
 import { EditProductComponent } from './modules/product/components/edit-product/edit-product.component';
 import { AddRevenueComponent } from './modules/revenue/components/add-revenue/add-revenue.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes:Routes=[
@@ -132,6 +133,8 @@ const routes:Routes=[
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [{provide: APP_BASE_HREF, useValue: ''}],
