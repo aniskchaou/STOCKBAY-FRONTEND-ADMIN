@@ -23,8 +23,6 @@ export default class BuyTestService implements Service {
         BuyTestService.id++
         data["id"] = BuyTestService.id
         this._buy.push(data);
-
-
     };
 
     public update(data) {
