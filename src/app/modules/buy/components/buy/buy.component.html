@@ -19,6 +19,22 @@
         </tr>
       </thead>
       <tbody class="list">
+        <tr *ngFor="let b of buys$">
+          <td scope="col" class="sort" data-sort="name">Hp</td>
+          <td scope="col" class="sort" data-sort="budget">{{b.supplier}}</td>
+          <td scope="col" class="sort" data-sort="status">{{b.purchase_status}}</td>
+          <td scope="col">5</td>
+          <td scope="col" class="sort" data-sort="completion">1287 $</td>
+          <td scope="col">22.000 $</td>
+          <td scope="col">{{b.purchase_date}}</td>
+        
+          <td>
+            <button type="button" data-toggle="modal" (click)="edit(b.id)" data-target="#editBuy"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(b.id)"><i class="fas fa-trash-alt"></i></button>
+          </td>
+        </tr>
+
         <tr>
           <td scope="col" class="sort" data-sort="name">Hp</td>
           <td scope="col" class="sort" data-sort="budget">Star  Computer</td>
@@ -29,7 +45,8 @@
           <td scope="col">12/22/2020</td>
           
           <td>
-            <button type="button" data-toggle="modal" data-target="#editBuy" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" data-toggle="modal" (click)="setId(3)" data-target="#editBuy" class="btn btn-warning btn-sm"><i
+                class="fas fa-edit"></i></button>
             <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
         </tr>
       </tbody>
@@ -62,7 +79,8 @@
             <app-add-buy></app-add-buy>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
+            <button type="button" (click)="getAll()" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i>
+              Fermer</button>
               
           </div>
         </div>

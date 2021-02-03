@@ -7,10 +7,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export default class BuyValidation {
     formGroup: FormGroup;
 
-
-
-
-
     public get formGroupInstance(): FormGroup {
         return this.formGroup;
     }
@@ -22,17 +18,18 @@ export default class BuyValidation {
     public checkValidation() {
 
         if (this.formGroup.invalid) {
-            return;
+            return false;
         }
+        return true;
     }
     createFormGroup() {
         return new FormGroup({
 
-            supplier: new FormControl(),
+            supplier: new FormControl('', Validators.required),
             product_id: new FormControl(),
-            date_buy: new FormControl('', Validators.required),
+            purchase_date: new FormControl('', Validators.required),
             purchase_invoiceNo: new FormControl('', Validators.required),
-            purchase_status: new FormControl(),
+            purchase_status: new FormControl('', Validators.required),
         })
     }
 }

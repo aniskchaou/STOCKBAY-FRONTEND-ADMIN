@@ -1,6 +1,7 @@
 <form class="form-horizontal">
     <div class="row">
         <div class="col-sm-6">
+        
             <div class="form-group"><label for="supplier_id" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -9,7 +10,7 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select id="supplier_id" name="supplier_id" class="form-control">
+                <div class="col-sm-8"><select [(ngModel)]="model.supplier" id="supplier_id" name="supplier_id" class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionnez un fournisseur</font>
@@ -45,8 +46,8 @@
                 <div class="col-sm-8">
                     <div class="input-group date">
                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div> <input type="date"
-                            name="purchase_date" id="purchase_date" placeholder="AAAA-MM-JJ"
-                            class="form-control datepicker pull-right">
+                            name="purchase_date" [(ngModel)]="model.purchase_date" id="purchase_date" placeholder="AAAA-MM-JJ"
+                            class="form-control datepicker pull-right" value="{{model.purchase_date }}">
                     </div>
                     <!---->
                 </div>
@@ -61,7 +62,8 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk require text-danger" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select name="purchase_status" id="purchase_status" class="form-control">
+                <div class="col-sm-8"><select [(ngModel)]="model.purchase_status" name="purchase_status" id="purchase_status"
+                        class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionner</font>
@@ -94,7 +96,7 @@
                     </font>
                 </label>
                 <div class="col-sm-8"><input type="text" name="purchase_invoiceNo" id="purchase_invoiceNo"
-                        placeholder="No de facture" class="form-control">
+                    [(ngModel)]="model.purchase_invoiceNo" value="{{model.purchase_invoiceNo}}" placeholder="No de facture" class="form-control">
                     <!---->
                 </div>
             </div>
@@ -185,7 +187,7 @@
             <div class="form-group">
                 <div class="col-sm-8 col-sm-offset-4"><button type="button" class="btn btn-info">
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Enregistrer</font>
+                            <font style="vertical-align: inherit;" (click)="edit()">Enregistrer</font>
                         </font>
                     </button></div>
             </div>
