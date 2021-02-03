@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { URLLoader } from 'src/app/main/configs/URLLoader';
+import RevenueMessage from 'src/app/main/messages/RevenueMessage';
+import RevenueTestService from 'src/app/main/mocks/RevenueTestService';
+import RevenueValidation from 'src/app/main/validations/RevenueValidation.';
 
 @Component({
   selector: 'app-add-revenue',
@@ -8,13 +12,34 @@ import { URLLoader } from 'src/app/main/configs/URLLoader';
 })
 export class AddRevenueComponent extends URLLoader implements OnInit {
 
-  constructor() { super() }
+  revenueForm: FormGroup
+  msg: RevenueMessage
+  submitted = false
 
-  ngOnInit(): void {
+
+  get f() { return this.revenueForm.controls; }
+
+  constructor(private validation: RevenueValidation, private message: RevenueMessage, private RevenueTestService: RevenueTestService) {
+    super()
+    this.revenueForm = this.validation.formGroupInstance
+    this.msg = this.message
 
   }
 
+  ngOnInit(): void {
+  }
+
+  reset() {
+    this.revenueForm.reset()
+  }
+
   add() {
-    super.show('StockBay', 'cette fonctionnalité est en cours de développement.', 'warning')
+    this.submitted = true;
+
+    if (this.validation.checkValidation()) {
+      this.RevenueTestService.create(this.revenueForm.value)
+      super.show('Confirmation', this.msg.confirmations.add, 'success')
+
+    }
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import RevenueMessage from 'src/app/main/messages/RevenueMessage';
+import RevenueTestService from 'src/app/main/mocks/RevenueTestService';
 import { URLLoader } from '../../../../main/configs/URLLoader';
 
 @Component({
@@ -11,13 +13,42 @@ export class RevenueComponent extends URLLoader implements OnInit {
   showsummary:boolean=false
   showgraphic:boolean=false
   
-  constructor() {
-    super()
-   }
-  
+  revenues$
+  id = 0
 
-ngOnInit() {
- super.loadScripts();
-}
+
+  constructor(private revenueTestService: RevenueTestService, private messageService: RevenueMessage) {
+    super()
+
+  }
+
+  setId(id) {
+    this.id = id
+  }
+
+  edit(id) {
+    this.setId(id)
+    this.revenueTestService.ID.next(id.toString())
+  }
+
+  delete(id) {
+    var r = confirm("Voulez-vous supprimer cet enregistrement ?");
+    if (r) {
+      this.setId(id)
+      this.revenueTestService.remove(parseInt(id))
+      super.show('Confirmation', this.messageService.confirmations.delete, 'success')
+    }
+
+  }
+
+  ngOnInit() {
+    super.loadScripts();
+    this.getAll()
+  }
+
+  getAll() {
+    this.revenues$ = this.revenueTestService.getAll()
+
+  }
 
 }

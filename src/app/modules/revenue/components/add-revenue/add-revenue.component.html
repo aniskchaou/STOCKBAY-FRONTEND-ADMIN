@@ -1,6 +1,7 @@
-<form class="form-horizontal">
+<form class="form-horizontal" [formGroup]="revenueForm">
     <div class="row">
         <div class="col-sm-6">
+        
             <div class="form-group"><label for="income_paymentDate" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -11,13 +12,16 @@
                 </label>
                 <div class="col-sm-8">
                     <div class="input-group date">
-                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div> <input type="date"
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input type="date" [ngClass]="{ 'is-invalid': submitted && f.income_paymentDate.errors }"
+                            formControlName="income_paymentDate"
                             name="income_paymentDate" id="income_paymentDate" placeholder="AAAA-MM-JJ"
                             class="form-control">
                     </div>
                     <!---->
                 </div>
             </div>
+
             <div class="form-group"><label for="customer_id" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -26,7 +30,8 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select id="customer_id" name="customer_id" class="form-control">
+                <div class="col-sm-8"><select id="customer_id" [ngClass]="{ 'is-invalid': submitted && f.customer_id.errors }"
+                        formControlName="customer_id" name="customer_id" class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionnez un client</font>
@@ -42,6 +47,7 @@
                     <!---->
                 </div>
             </div>
+
             <div class="form-group"><label for="income_paymentType" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -49,7 +55,8 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><select type="text" name="income_paymentType" id="income_paymentType"
+                <div class="col-sm-8"><select type="text" [ngClass]="{ 'is-invalid': submitted && f.income_paymentType.errors }"
+                        formControlName="income_paymentType" name="income_paymentType" id="income_paymentType"
                         class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
@@ -75,6 +82,8 @@
                     <!---->
                 </div>
             </div>
+
+
             <div class="form-group"><label for="income_paymentAccount" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -82,7 +91,8 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><select type="text" name="income_paymentAccount" id="income_paymentAccount"
+                <div class="col-sm-8"><select type="text" [ngClass]="{ 'is-invalid': submitted && f.income_paymentAccount.errors }"
+                        formControlName="income_paymentAccount" name="income_paymentAccount" id="income_paymentAccount"
                         class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
@@ -108,6 +118,8 @@
                     <!---->
                 </div>
             </div>
+
+
         </div>
         <div class="col-sm-6">
             <div class="form-group"><label for="income_amount" class="col-sm-4 control-label">
@@ -118,11 +130,15 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="number" min="0" max="10000000" step="any" name="income_amount"
+                <div class="col-sm-8"><input type="number" min="0" max="10000000" step="any"
+                        [ngClass]="{ 'is-invalid': submitted && f.income_amount.errors }" formControlName="income_amount"
+                        name="income_amount"
                         id="income_amount" placeholder="Montant" class="form-control">
                     <!---->
                 </div>
             </div>
+
+
             <div class="form-group"><label for="income_details" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -130,19 +146,25 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><textarea id="income_details" name="income_details" rows="5"
+                <div class="col-sm-8"><textarea id="income_details" [ngClass]="{ 'is-invalid': submitted && f.income_details.errors }"
+                        formControlName="income_details" name="income_details" rows="5"
                         placeholder="Entrer ..." class="form-control"></textarea></div>
             </div>
+
+
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
-                <div class="col-sm-8 col-sm-offset-4"><button type="button" class="btn btn-info">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;" (click)="add()"><i class="fas fa-save"></i> Sauvegarder</font>
-                        </font>
-                    </button></div>
+                <button (click)="add()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
+                <button (click)="reset()" type="button" class="btn btn-danger">
+                    <i class="fas fa-times"></i>
+                    Annuler
+                </button>
             </div>
         </div>
         <div class="col-sm-6"></div>

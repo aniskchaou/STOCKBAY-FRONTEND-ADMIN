@@ -41,7 +41,7 @@ export class AddBuyComponent extends URLLoader implements OnInit {
 
     if (this.validation.checkValidation()) {
       this.buyTestService.create(this.buyForm.value)
-      super.show('Confirmation', this.msg.confirmationMessages.add, 'success')
+      super.show('Confirmation', this.msg.confirmations.add, 'success')
 
     }
 

@@ -36,7 +36,7 @@ export class BuyComponent extends URLLoader implements OnInit {
     if (r) {
       this.setId(id)
       this.buyTestService.remove(parseInt(id))
-      super.show('Confirmation', this.messageService.confirmationMessages.delete, 'success')
+      super.show('Confirmation', this.messageService.confirmations.delete, 'success')
     }
 
   }

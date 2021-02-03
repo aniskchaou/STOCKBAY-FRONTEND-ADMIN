@@ -34,6 +34,6 @@ export class EditBuyComponent extends URLLoader implements OnInit {
 
   edit() {
     this.buyTestService.update(this.model)
-    super.show('Confirmation', this.message.confirmationMessages.edit, 'success')
+    super.show('Confirmation', this.message.confirmations.edit, 'success')
   }
 }

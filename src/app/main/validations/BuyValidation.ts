@@ -1,26 +1,15 @@
 
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import Validation from './Validation';
 @Injectable({
     providedIn: 'root'
 })
-export default class BuyValidation {
-    formGroup: FormGroup;
-
-    public get formGroupInstance(): FormGroup {
-        return this.formGroup;
-    }
+export default class BuyValidation extends Validation {
 
     constructor() {
-        this.formGroup = this.createFormGroup()
-    }
-
-    public checkValidation() {
-
-        if (this.formGroup.invalid) {
-            return false;
-        }
-        return true;
+        super()
+        super.formGroup = this.createFormGroup()
     }
     createFormGroup() {
         return new FormGroup({

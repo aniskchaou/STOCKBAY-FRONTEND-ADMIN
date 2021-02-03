@@ -1,5 +1,8 @@
+<form [formGroup]="sellForm">
 <div class="row">
     <div class="col-sm-6">
+
+
         <div class="form-group"><label for="customer_id" class="col-sm-4 control-label">
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">
@@ -8,7 +11,8 @@
                 </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                     class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
             </label>
-            <div class="col-sm-8"><select id="customer_id" name="customer_id" class="form-control">
+            <div class="col-sm-8"><select id="customer_id" [ngClass]="{ 'is-invalid': submitted && f.customer_id.errors }"
+                    formControlName="customer_id" name="customer_id" class="form-control">
                     <option value="">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">Sélectionnez un client</font>
@@ -19,90 +23,13 @@
                             <font style="vertical-align: inherit;">Ashley Hermann</font>
                         </font>
                     </option>
-                    <option value="11">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Ryann Breitenberg</font>
-                        </font>
-                    </option>
-                    <option value="12">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Prof. Lottie Kautzer I</font>
-                        </font>
-                    </option>
-                    <option value="13">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Mme Marjolaine McKenzie</font>
-                        </font>
-                    </option>
-                    <option value="14">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Eldora Cartwright III</font>
-                        </font>
-                    </option>
-                    <option value="15">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Pr Karine West DDS</font>
-                        </font>
-                    </option>
-                    <option value="16">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Prof. Lula Denesik</font>
-                        </font>
-                    </option>
-                    <option value="17">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Richmond Mayert</font>
-                        </font>
-                    </option>
-                    <option value="18">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Ron Bailey</font>
-                        </font>
-                    </option>
-                    <option value="19">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Mlle Laura Rau IV</font>
-                        </font>
-                    </option>
-                    <option value="20">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Abigayle Brakus</font>
-                        </font>
-                    </option>
-                    <option value="27">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">mamun</font>
-                        </font>
-                    </option>
-                    <option value="29">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Vrai ami</font>
-                        </font>
-                    </option>
-                    <option value="30">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Digitalindiaadd</font>
-                        </font>
-                    </option>
-                    <option value="43">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">BR</font>
-                        </font>
-                    </option>
-                    <option value="54">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">RAM</font>
-                        </font>
-                    </option>
-                    <option value="55">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Awais Qurni</font>
-                        </font>
-                    </option>
+            
                 </select>
                 <!---->
             </div>
         </div>
+
+
         <div class="form-group"><label for="sale_date" class="col-sm-4 control-label">
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">
@@ -114,13 +41,15 @@
             <div class="col-sm-8">
                 <div class="input-group date">
                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div> <input type="date"
-                        name="sale_date" id="sale_date" placeholder="AAAA-MM-JJ"
+                    [ngClass]="{ 'is-invalid': submitted && f.sale_date.errors }"
+                     formControlName="sale_date" name="sale_date" id="sale_date" placeholder="AAAA-MM-JJ"
                         class="form-control datepicker pull-right">
                 </div>
                 <!---->
             </div>
         </div>
     </div>
+
     <div class="col-sm-6">
         <div class="form-group"><label for="sale_status" class="col-sm-4 control-label">
                 <font style="vertical-align: inherit;">
@@ -130,7 +59,8 @@
                 </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                     class="fa fa-asterisk require text-danger" data-original-title="Required"></i>
             </label>
-            <div class="col-sm-8"><select name="sale_status" id="sale_status" class="form-control">
+            <div class="col-sm-8"><select [ngClass]="{ 'is-invalid': submitted && f.sale_status.errors }"
+                    formControlName="sale_status" name="sale_status" id="sale_status" class="form-control">
                     <option value="">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">Sélectionner</font>
@@ -155,6 +85,7 @@
                 <!---->
             </div>
         </div>
+
         <div class="form-group"><label for="sale_invoiceNo" class="col-sm-4 control-label">
                 <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">
@@ -162,11 +93,20 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-8"><input type="text" name="sale_invoiceNo" id="sale_invoiceNo"
+            <div class="col-sm-8"><input type="text" [ngClass]="{ 'is-invalid': submitted && f.sale_invoiceNo.errors }"
+                    formControlName="sale_invoiceNo" name="sale_invoiceNo" id="sale_invoiceNo"
                     placeholder="No de facture" class="form-control">
                 <!---->
             </div>
         </div>
-        <button type="button" class="btn btn-info" (click)="add()"><i class="fas fa-save"></i> Sauvegarder</button>
+<button (click)="add()" type="button" class="btn btn-info">
+    <i class="fas fa-save"></i>
+    Sauvegarder
+</button>
+<button (click)="reset()" type="button" class="btn btn-danger">
+    <i class="fas fa-times"></i>
+    Annuler
+</button>
     </div>
 </div>
+</form>

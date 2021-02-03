@@ -5,34 +5,34 @@ import Service from "../interfaces/Service";
 @Injectable({
     providedIn: 'root'
 })
-export default class SaleTestService implements Service {
+export default class ExpenseTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _sale = []
+    _stock = []
     static id = 0
 
     public getAll() {
-        return this._sale;
+        return this._stock;
     }
 
     public get(id) {
-        return this._sale.find(item => item.id === id);
+        return this._stock.find(item => item.id === id);
     };
 
     public create(data) {
-        data["id"] = SaleTestService.id
-        this._sale.push(data);
-        SaleTestService.id++
+        data["id"] = ExpenseTestService.id
+        this._stock.push(data);
+        ExpenseTestService.id++
         console.log(data)
     };
 
     public update(old, data) {
 
-        var foundIndex = this._sale.findIndex(item => item === old);
-        this._sale[foundIndex] = data;
+        var foundIndex = this._stock.findIndex(item => item === old);
+        this._stock[foundIndex] = data;
     };
 
     public remove(id) {
-        this._sale.splice(id, 1);
+        this._stock.splice(id, 1);
     };
 
 

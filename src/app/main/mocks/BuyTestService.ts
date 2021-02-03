@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
-
 import Service from "../interfaces/Service";
-import Buy from "../models/Buy";
 import { BehaviorSubject } from "rxjs";
+
 @Injectable({
     providedIn: 'root'
 })
@@ -34,13 +33,9 @@ export default class BuyTestService implements Service {
     public remove(id) {
 
         var index = this._buy.findIndex(item => item.id === id);
-
-
         if (index != -1) {
             this._buy.splice(index, 1);
         }
-
-
     };
 
 
