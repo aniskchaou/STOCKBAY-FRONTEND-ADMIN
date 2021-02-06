@@ -17,15 +17,17 @@
         </tr>
       </thead>
       <tbody class="list">
-        <td scope="col" class="sort" data-sort="name">23/12/2020</td>
-        <td scope="col" class="sort" data-sort="budget">Client 1</td>
-        <td scope="col" class="sort" data-sort="status">type</td>
-        <td scope="col">323423423</td>
-        <td scope="col" class="sort" data-sort="completion">232</td>
-
-        <td><button type="button" data-toggle="modal" data-target="#viewExpense" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
-          <button type="button" data-toggle="modal" data-target="#editExpense" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-          <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
+        <tr *ngFor="let s of expenses$">
+          <td scope="col" class="sort" data-sort="name">{{s.expense_paymentDate}}</td>
+          <td scope="col" class="sort" data-sort="budget">{{s.supplier_id}}</td>
+          <td scope="col" class="sort" data-sort="status">{{s.expense_paymentType}}</td>
+          <td scope="col">{{s.expense_paymentAccount}}</td>
+          <td scope="col" class="sort" data-sort="completion">{{s.expense_amount}}</td>
+  
+          <td><button type="button" data-toggle="modal" data-target="#viewExpense" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
+            <button type="button" data-toggle="modal" data-target="#editExpense" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
+        </tr>
       </tbody>
     </table>
     <button type="button" data-toggle="modal" data-target="#addExpense" class="btn btn-success btn-sm"><i

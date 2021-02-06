@@ -17,6 +17,19 @@
         </tr>
       </thead>
       <tbody class="list">
+<tr *ngFor="let p of products$">
+  <td scope="col" class="sort" data-sort="name">{{p.product_name}}</td>
+  <td scope="col" class="sort" data-sort="budget">{{p.category_id}}</td>
+  <td scope="col" class="sort" data-sort="status">{{p.supplier_id}}</td>
+  <td scope="col">{{p.product_sellPrice}} $</td>
+  <td scope="col" class="sort" data-sort="completion">{{p.product_alertquantity}}</td>
+  <td>
+    <button type="button" data-toggle="modal" data-target="#editProduct" class="btn btn-warning btn-sm"><i
+        class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
+  </td>
+</tr>
+
         <tr>
           <td scope="col" class="sort" data-sort="name">IPhone 6s</td>
           <td scope="col" class="sort" data-sort="budget">électroménager</td>

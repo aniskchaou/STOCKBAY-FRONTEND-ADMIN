@@ -17,6 +17,19 @@
         </tr>
       </thead>
       <tbody class="list">
+<tr *ngFor="let s of suppliers$">
+  <td scope="col" class="sort" data-sort="name">{{s.supplier_name}}</td>
+  <td scope="col" class="sort" data-sort="budget">{{s.supplier_email}}</td>
+  <td scope="col" class="sort" data-sort="status">{{s.supplier_phone}}</td>
+  <td scope="col">{{s.supplier_address}}</td>
+  <td scope="col" class="sort" data-sort="completion"><span class="badge bg-success">Active</span></td>
+  <td>
+    <button type="button" data-toggle="modal" data-target="#editSupplier" class="btn btn-warning btn-sm"><i
+        class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
+  </td>
+</tr>
+
         <tr>
           <td scope="col" class="sort" data-sort="name">CommonFit</td>
           <td scope="col" class="sort" data-sort="budget">FabriceLesperance@armyspy.com</td>

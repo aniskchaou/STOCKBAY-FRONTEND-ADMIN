@@ -17,6 +17,21 @@
         </tr>
       </thead>
       <tbody class="list">
+<tr *ngFor="let r of revenues$">
+  <th scope="col" class="sort" data-sort="name">{{r.income_paymentDate}}</th>
+  <th scope="col" class="sort" data-sort="budget">{{r.customer_id}}</th>
+  <th scope="col" class="sort" data-sort="status">{{r.income_paymentType}}</th>
+  <th scope="col">{{r.income_paymentAccount}}</th>
+  <th scope="col" class="sort" data-sort="completion">{{r.income_amount}} $</th>
+
+  <td><button type="button" data-toggle="modal" data-target="#viewRevenue" class="btn btn-primary btn-sm"><i
+        class="fas fa-address-book"></i></button>
+    <button type="button" data-toggle="modal" data-target="#editRevenue" class="btn btn-warning btn-sm"><i
+        class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
+  </td>
+</tr>
+
         <tr>
           <th scope="col" class="sort" data-sort="name">23/10/2020</th>
           <th scope="col" class="sort" data-sort="budget">ReviewCareers</th>

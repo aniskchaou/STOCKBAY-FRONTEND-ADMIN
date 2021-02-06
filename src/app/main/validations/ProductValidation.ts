@@ -13,13 +13,18 @@ export default class ProductValidation extends Validation {
     createFormGroup() {
         return new FormGroup({
 
-            supplier_name: new FormControl('', Validators.required),
-            supplier_phone: new FormControl('', Validators.required),
-            supplier_email: new FormControl('', Validators.required),
-            supplier_company: new FormControl('', Validators.required),
-            supplier_address: new FormControl('', Validators.required),
-            status_id: new FormControl('', Validators.required),
-            supplier_description: new FormControl('', Validators.required),
+            product_name: new FormControl('', Validators.required),
+            category_id: new FormControl('', Validators.required),
+            supplier_id: new FormControl('', Validators.required),
+            product_unit: new FormControl('', Validators.required),
+            product_alertquantity: new FormControl('', Validators.required),
+            product_supplierPrice: new FormControl('', Validators.required),
+            product_sellPrice: new FormControl('', Validators.required),
+            product_code: new FormControl('', Validators.required),
+            product_tax: new FormControl('', Validators.required),
+            warehouse_id: new FormControl('', Validators.required),
+            product_details: new FormControl('', Validators.required),
+            product_detailsforinvoice: new FormControl('', Validators.required),
 
         })
     }

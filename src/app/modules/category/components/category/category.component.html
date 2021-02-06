@@ -14,15 +14,22 @@
           </tr>
         </thead>
         <tbody class="list">
+        <tr *ngFor="let c of categorys$">
+          <td scope="col" class="sort" data-sort="name">{{c.category_name}}</td>
+          <td scope="col" class="sort" data-sort="budget">{{c.status_id}}</td>
+          <td><button type="button" data-toggle="modal" (click)="edit(c.id)" data-target="#editCategory"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(c.id)"><i class="fas fa-trash-alt"></i></button>
+          </td>
+        </tr>
           <tr>
             <td scope="col" class="sort" data-sort="name">électrom"nager</td>
             <td scope="col" class="sort" data-sort="budget">Active</td>
-        
-            
             <td><button type="button" data-toggle="modal" data-target="#viewCategory" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
               <button type="button" data-toggle="modal" data-target="#editCategory"class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
               <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
           </tr>
+        
         </tbody>
       </table>
       <button type="button" data-toggle="modal" data-target="#addCategory" class="btn btn-success btn-sm"><i

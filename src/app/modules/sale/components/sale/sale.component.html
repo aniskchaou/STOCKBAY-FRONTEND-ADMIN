@@ -19,6 +19,22 @@
             </tr>
           </thead>
           <tbody class="list">
+<tr *ngFor="let s of sells$">
+  <td scope="col" class="sort" data-sort="name">{{s.name}}</td>
+  <td scope="col" class="sort" data-sort="budget">{{s.customer_id}}</td>
+  <td scope="col" class="sort" data-sort="status">{{s.sale_status}}</td>
+  <td scope="col">5</td>
+  <td scope="col" class="sort" data-sort="completion">20000 $</td>
+  <td scope="col">10000 $</td>
+  <td scope="col">{{s.sale_date}}</td>
+  <td><button type="button" data-toggle="modal" data-target="#viewSale" class="btn btn-primary btn-sm"><i
+        class="fas fa-address-book"></i></button>
+    <button type="button" data-toggle="modal" data-target="#editSale" class="btn btn-warning btn-sm"><i
+        class="fas fa-edit"></i></button>
+    <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
+  </td>
+</tr>
+
             <tr>
               <td scope="col" class="sort" data-sort="name">Asus</td>
               <td scope="col" class="sort" data-sort="budget">VoiceTower</td>
@@ -27,11 +43,12 @@
               <td scope="col" class="sort" data-sort="completion">1000 $</td>
               <td scope="col">6000 $</td>
               <td scope="col">22/4/2020</td>
-              
               <td><button type="button" data-toggle="modal" data-target="#viewSale" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
                 <button type="button" data-toggle="modal" data-target="#editSale" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
                 <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
             </tr>
+
+
           </tbody>
           <tfoot class="thead-light">
             <tr>
