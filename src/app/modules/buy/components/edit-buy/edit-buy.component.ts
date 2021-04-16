@@ -13,21 +13,27 @@ import Buy from 'src/app/main/models/Buy';
 export class EditBuyComponent extends URLLoader implements OnInit {
 
 
-  model: Buy = new Buy(0, '', '', '', '')
+  model: Buy
 
-  constructor(private buyTestService: BuyTestService, private message: BuyMessage) {
+
+  constructor(private buyTestService: BuyTestService,
+    private message: BuyMessage) {
     super()
-    this.model = new Buy(0, '', '', '', '');
+    this.model = this.create()
   }
 
+
+  create() {
+    return new Buy(0, '', '', '', '')
+  }
 
   ngOnInit(): void {
 
     this.buyTestService.ID.subscribe(idd => {
-      this.model = this.buyTestService.get(idd)
-      console.log(this.model)
+
+      this.model = this.buyTestService.get(parseInt(idd))
       if (this.model == undefined) {
-        this.model = new Buy(0, '', '', '', '');
+        this.model = this.model = this.create()
       }
     })
   }
@@ -36,4 +42,5 @@ export class EditBuyComponent extends URLLoader implements OnInit {
     this.buyTestService.update(this.model)
     super.show('Confirmation', this.message.confirmations.edit, 'success')
   }
+
 }

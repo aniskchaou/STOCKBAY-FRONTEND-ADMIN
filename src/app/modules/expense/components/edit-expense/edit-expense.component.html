@@ -11,7 +11,8 @@
                 </label>
                 <div class="col-sm-8">
                     <div class="input-group date">
-                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div> <input type="date"
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input type="date" [(ngModel)]="model.expense_paymentDate" value="{{model.expense_paymentDate}}"
                             name="expense_paymentDate" id="expense_paymentDate" placeholder="AAAA-MM-JJ"
                             class="form-control">
                     </div>
@@ -26,7 +27,8 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select id="supplier_id" name="supplier_id" class="form-control">
+                <div class="col-sm-8">
+                    <select [(ngModel)]="model.supplier_id" id="supplier_id" name="supplier_id" class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionnez un fournisseur</font>
@@ -58,7 +60,9 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><select name="expense_paymentType" id="expense_paymentType" class="form-control">
+                <div class="col-sm-8">
+                    <select [(ngModel)]="model.expense_paymentType" name="expense_paymentType" id="expense_paymentType"
+                        class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionner le genre</font>
@@ -90,8 +94,9 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><select name="expense_paymentAccount" id="expense_paymentAccount"
-                        class="form-control">
+                <div class="col-sm-8">
+                    <select [(ngModel)]="model.expense_paymentAccount" name="expense_paymentAccount"
+                        id="expense_paymentAccount" class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionnez un compte</font>
@@ -126,8 +131,10 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="number" min="0" max="10000000" step="any" name="expense_amount"
-                        id="expense_amount" placeholder="Montant" class="form-control">
+                <div class="col-sm-8">
+                    <input value="{{model.expense_amount}}" [(ngModel)]="model.expense_amount" type="number" min="0"
+                        max="10000000" step="any" name="expense_amount" id="expense_amount" placeholder="Montant"
+                        class="form-control">
                     <!---->
                 </div>
             </div>
@@ -138,15 +145,17 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><textarea id="expense_details" name="expense_details" rows="5"
-                        placeholder="Entrer ..." class="form-control"></textarea></div>
+                <div class="col-sm-8">
+                    <textarea value="{{model.expense_details}}" id="expense_details" [(ngModel)]="model.expense_details"
+                        name="expense_details" rows="5" placeholder="Entrer ..." class="form-control"></textarea>
+                </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
-                <div class="col-sm-8 col-sm-offset-4"><button type="button" class="btn btn-info">
+                <div class="col-sm-8 col-sm-offset-4"><button (click)="edit()" type="button" class="btn btn-info">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">sauver</font>
                         </font>

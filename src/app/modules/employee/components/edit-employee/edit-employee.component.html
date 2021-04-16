@@ -9,8 +9,9 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="text" name="employee_fname" id="employee_fname"
-                        placeholder="Nom de l'employé" class="form-control">
+                <div class="col-sm-8">
+                    <input type="text" name="employee_fname" id="employee_fname" [(ngModel)]="model.employee_fname"
+                        value="{{model.employee_fname}}" placeholder="Nom de l'employé" class="form-control">
                     <!---->
                 </div>
             </div>
@@ -22,8 +23,9 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="email" name="employee_email" id="employee_email"
-                        placeholder="Courriel des employés" class="form-control">
+                <div class="col-sm-8">
+                    <input type="email" name="employee_email" id="employee_email" [(ngModel)]="model.employee_email"
+                        value="{{model.employee_email}}" placeholder="Courriel des employés" class="form-control">
                     <!---->
                 </div>
             </div>
@@ -35,8 +37,9 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="tel" name="employee_phone" id="employee_phone"
-                        placeholder="Téléphone de l'employé" class="form-control">
+                <div class="col-sm-8">
+                    <input type="tel" name="employee_phone" id="employee_phone" [(ngModel)]="model.employee_phone"
+                        value="{{model.employee_phone}}" placeholder="Téléphone de l'employé" class="form-control">
                     <!---->
                 </div>
             </div>
@@ -48,7 +51,8 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select type="text" name="employee_gender" id="employee_gender"
+                <div class="col-sm-8">
+                    <select type="text" name="employee_gender" id="employee_gender" [(ngModel)]="model.employee_gender"
                         class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
@@ -77,8 +81,9 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="text" name="employee_nid" id="employee_nid" placeholder="NID"
-                        class="form-control">
+                <div class="col-sm-8">
+                    <input type="text" name="employee_nid" id="employee_nid" placeholder="NID"
+                        [(ngModel)]="model.employee_nid" value="{{model.employee_nid}}" class="form-control">
                     <!---->
                 </div>
             </div>
@@ -92,7 +97,9 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select type="text" id="status_id" name="status_id" class="form-control">
+                <div class="col-sm-8">
+                    <select [(ngModel)]="model.status_id" type="text" id="status_id" name="status_id"
+                        class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionnez le statut</font>
@@ -119,7 +126,9 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><input type="date" name="employee_birthday" id="employee_birthday"
+                <div class="col-sm-8">
+                    <input type="date" name="employee_birthday" id="employee_birthday"
+                        [(ngModel)]="model.employee_birthday" value="{{model.employee_birthday}}"
                         placeholder="AAAA-MM-JJ" class="form-control">
                     <!---->
                 </div>
@@ -131,8 +140,11 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><textarea id="employee_address" name="employee_address" rows="3"
-                        placeholder="Entrer ..." class="form-control"></textarea></div>
+                <div class="col-sm-8">
+                    <textarea id="employee_address" name="employee_address" rows="3"
+                        [(ngModel)]="model.employee_address" value="{{model.employee_address}}" placeholder="Entrer ..."
+                        class="form-control"></textarea>
+                </div>
             </div>
             <div class="form-group"><label for="employee_salary" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
@@ -141,8 +153,10 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><input type="number" step="any" name="employee_salary" id="employee_salary"
-                        placeholder="Un salaire" class="form-control">
+                <div class="col-sm-8">
+                    <input type="number" step="any" name="employee_salary" id="employee_salary"
+                        [(ngModel)]="model.employee_salary" value="{{model.employee_salary}}" placeholder="Un salaire"
+                        class="form-control">
                     <!---->
                 </div>
             </div>
@@ -151,7 +165,7 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
-                <div class="col-sm-8 col-sm-offset-4"><button type="button" class="btn btn-info">
+                <div class="col-sm-8 col-sm-offset-4"><button (click)="edit()" type="button" class="btn btn-info">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">sauver</font>
                         </font>

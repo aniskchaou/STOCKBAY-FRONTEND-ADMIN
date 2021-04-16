@@ -27,28 +27,16 @@
           <td scope="col" class="sort" data-sort="completion">1287 $</td>
           <td scope="col">22.000 $</td>
           <td scope="col">{{b.purchase_date}}</td>
-        
+
           <td>
             <button type="button" data-toggle="modal" (click)="edit(b.id)" data-target="#editBuy"
               class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" (click)="delete(b.id)"><i class="fas fa-trash-alt"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(b.id)"><i
+                class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
 
-        <tr>
-          <td scope="col" class="sort" data-sort="name">Hp</td>
-          <td scope="col" class="sort" data-sort="budget">Star  Computer</td>
-          <td scope="col" class="sort" data-sort="status">Ative</td>
-          <td scope="col">5</td>
-          <td scope="col" class="sort" data-sort="completion">1287 $</td>
-          <td scope="col">22.000 $</td>
-          <td scope="col">12/22/2020</td>
-          
-          <td>
-            <button type="button" data-toggle="modal" (click)="setId(3)" data-target="#editBuy" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
-        </tr>
+
       </tbody>
       <tfoot class="thead-light">
         <tr>
@@ -65,71 +53,11 @@
     </table>
     <button data-toggle="modal" data-target="#addBuy" type="button" class="btn btn-success btn-sm"><i
         class="fas fa-plus-circle"></i> Ajouter</button>
-  
-    <div class="modal fade" id="addBuy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-add-buy></app-add-buy>
-          </div>
-          <div class="modal-footer">
-            <button type="button" (click)="getAll()" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i>
-              Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-modal-buy></app-modal-buy>
 
-    <div class="modal fade" id="viewBuy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-view-buy></app-view-buy>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="modal fade" id="editBuy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-edit-buy></app-edit-buy>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  
-  
-  
+
+
   </div>
   <!-- Card footer -->
 

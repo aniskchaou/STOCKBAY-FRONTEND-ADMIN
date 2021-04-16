@@ -9,7 +9,8 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="text" [ngClass]="{ 'is-invalid': submitted && f.customer_name.errors }"
+                <div class="col-sm-8"><input type="text"
+                        [ngClass]="{ 'is-invalid': submitted && f.customer_name.errors }"
                         formControlName="customer_name" name="customer_name" id="customer_name"
                         placeholder="Nom du client" class="form-control">
                     <!---->
@@ -23,7 +24,8 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="tel" [ngClass]="{ 'is-invalid': submitted && f.customer_phone.errors }"
+                <div class="col-sm-8"><input type="tel"
+                        [ngClass]="{ 'is-invalid': submitted && f.customer_phone.errors }"
                         formControlName="customer_phone" name="customer_phone" id="customer_phone"
                         placeholder="Téléphone client" class="form-control">
                     <!---->
@@ -37,9 +39,9 @@
                     </font>
                 </label>
                 <div class="col-sm-8"><textarea id="customer_address"
-                        [ngClass]="{ 'is-invalid': submitted && f.customer_address.errors }" formControlName="customer_address"
-                        name="customer_address" rows="3"
-                        placeholder="Entrer ..." class="form-control"></textarea></div>
+                        [ngClass]="{ 'is-invalid': submitted && f.customer_address.errors }"
+                        formControlName="customer_address" name="customer_address" rows="3" placeholder="Entrer ..."
+                        class="form-control"></textarea></div>
             </div>
         </div>
         <div class="col-sm-6">
@@ -51,7 +53,8 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><input type="email" [ngClass]="{ 'is-invalid': submitted && f.customer_email.errors }"
+                <div class="col-sm-8"><input type="email"
+                        [ngClass]="{ 'is-invalid': submitted && f.customer_email.errors }"
                         formControlName="customer_email" name="customer_email" id="customer_email"
                         placeholder="email client" class="form-control">
                     <!---->
@@ -65,19 +68,20 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select type="text" id="status_id" [ngClass]="{ 'is-invalid': submitted && f.status_id.errors }"
-                        formControlName="status_id" name="status_id" class="form-control">
+                <div class="col-sm-8"><select type="text" id="status_id"
+                        [ngClass]="{ 'is-invalid': submitted && f.status_id.errors }" formControlName="status_id"
+                        name="status_id" class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionnez le statut</font>
                             </font>
                         </option>
-                        <option value="0">
+                        <option value="Inactif">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Inactif</font>
                             </font>
                         </option>
-                        <option value="1">
+                        <option value="Active">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">actif</font>
                             </font>
@@ -94,8 +98,8 @@
                     </font>
                 </label>
                 <div class="col-sm-8"><textarea id="customer_description"
-                        [ngClass]="{ 'is-invalid': submitted && f.customer_description.errors }" formControlName="customer_description"
-                        name="customer_description" rows="3"
+                        [ngClass]="{ 'is-invalid': submitted && f.customer_description.errors }"
+                        formControlName="customer_description" name="customer_description" rows="3"
                         placeholder="Entrer ..." class="form-control"></textarea></div>
             </div>
         </div>

@@ -1,126 +1,60 @@
 <div class="card">
-    <!-- Card header -->
-    <div class="card-header border-0">
-        <h3 class="mb-0">Employés</h3>
-    </div>
-    <!-- Light table -->
-    <div class="table-responsive">
-        <table class="table align-items-center table-flush">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col" class="sort" data-sort="name">Nom</th>
-                    <th scope="col" class="sort" data-sort="budget">Email</th>
-                    <th scope="col" class="sort" data-sort="status">Téléphone</th>
-                    <th scope="col">Adresse</th>
-                    <th scope="col" class="sort" data-sort="completion">Statut</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody class="list">
-              <tr *ngFor="let e of employees$">
-                <td scope="col" class="sort" data-sort="name">{{e.employee_fname}}
-                </td>
-                <td scope="col" class="sort" data-sort="budget">{{e.employee_email}}
-                </td>
-                <td scope="col" class="sort" data-sort="status">{{e.employee_phone}}</td>
-                <td scope="col">{{e.employee_address}}</td>
-                <td scope="col" class="sort" data-sort="completion">{{e.status_id}}</td>
-              
-                <td>
-                  <button type="button" data-toggle="modal" data-target="#editEmployee" class="btn btn-warning btn-sm"><i
-                      class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
-                </td>
-              </tr>
+  <!-- Card header -->
+  <div class="card-header border-0">
+    <h3 class="mb-0">Employés</h3>
+  </div>
+  <!-- Light table -->
+  <div class="table-responsive">
+    <table class="table align-items-center table-flush">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" class="sort" data-sort="name">Nom</th>
+          <th scope="col" class="sort" data-sort="budget">Email</th>
+          <th scope="col" class="sort" data-sort="status">Téléphone</th>
+          <th scope="col">Adresse</th>
+          <th scope="col" class="sort" data-sort="completion">Statut</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="list">
+        <tr *ngFor="let e of employees$">
+          <td scope="col" class="sort" data-sort="name">{{e.employee_fname}}
+          </td>
+          <td scope="col" class="sort" data-sort="budget">{{e.employee_email}}
+          </td>
+          <td scope="col" class="sort" data-sort="status">{{e.employee_phone}}</td>
+          <td scope="col">{{e.employee_address}}</td>
+          <td scope="col" class="sort" data-sort="completion">{{e.status_id}}</td>
 
-                <tr>
-                    <td scope="col" class="sort" data-sort="name">Eglantine Deschênes
-                    </td>
-                    <td scope="col" class="sort" data-sort="budget">EglantineDeschenes@teleworm.us
-                    </td>
-                    <td scope="col" class="sort" data-sort="status">01.50.38.11.50</td>
-                    <td scope="col">84, Quai des Belges
-                      77100 MEAUX</td>
-                    <td scope="col" class="sort" data-sort="completion">Active</td>
-                    
-                    <td>
-                        <button type="button" data-toggle="modal" data-target="#editEmployee"class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-                        <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
-                </tr>
-            </tbody>
-            <tfoot class="thead-light">
-              <tr>
-                  <th scope="col" class="sort" data-sort="name">Nom</th>
-                  <th scope="col" class="sort" data-sort="budget">Email</th>
-                  <th scope="col" class="sort" data-sort="status">Téléphone</th>
-                  <th scope="col">Adresse</th>
-                  <th scope="col" class="sort" data-sort="completion">Statut</th>
-                  <th scope="col">Actions</th>
-              </tr>
-          </tfoot>
-        </table>
-        <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success btn-sm"><i
-            class="fas fa-plus-circle"></i> Ajouter</button>
-        <div class="modal fade" id="addEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <app-add-employee></app-add-employee>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-                    
-                </div>
-              </div>
-            </div>
-          </div>
+          <td>
+            <button type="button" (click)="edit(e.id)" data-toggle="modal" data-target="#editEmployee"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" (click)="delete(e.id)" class="btn btn-danger btn-sm" onClick={deleteTask}><i
+                class="fas fa-trash-alt"></i></button>
+          </td>
+        </tr>
 
-          <div class="modal fade" id="editEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <app-edit-employee></app-edit-employee>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-                    
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="modal fade" id="viewEmployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                <app-view-employee></app-view-employee>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-                    
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
-    <!-- Card footer -->
+      </tbody>
+      <tfoot class="thead-light">
+        <tr>
+          <th scope="col" class="sort" data-sort="name">Nom</th>
+          <th scope="col" class="sort" data-sort="budget">Email</th>
+          <th scope="col" class="sort" data-sort="status">Téléphone</th>
+          <th scope="col">Adresse</th>
+          <th scope="col" class="sort" data-sort="completion">Statut</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </tfoot>
+    </table>
+    <button type="button" data-toggle="modal" data-target="#addEmployee" class="btn btn-success btn-sm"><i
+        class="fas fa-plus-circle"></i> Ajouter</button>
+    <app-modal-employee></app-modal-employee>
+
+
+
+
+  </div>
+  <!-- Card footer -->
 
 </div>

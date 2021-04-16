@@ -17,35 +17,22 @@
         </tr>
       </thead>
       <tbody class="list">
-<tr *ngFor="let r of revenues$">
-  <th scope="col" class="sort" data-sort="name">{{r.income_paymentDate}}</th>
-  <th scope="col" class="sort" data-sort="budget">{{r.customer_id}}</th>
-  <th scope="col" class="sort" data-sort="status">{{r.income_paymentType}}</th>
-  <th scope="col">{{r.income_paymentAccount}}</th>
-  <th scope="col" class="sort" data-sort="completion">{{r.income_amount}} $</th>
+        <tr *ngFor="let r of revenues$">
+          <th scope="col" class="sort" data-sort="name">{{r.income_paymentDate}}</th>
+          <th scope="col" class="sort" data-sort="budget">{{r.customer_id}}</th>
+          <th scope="col" class="sort" data-sort="status">{{r.income_paymentType}}</th>
+          <th scope="col">{{r.income_paymentAccount}}</th>
+          <th scope="col" class="sort" data-sort="completion">{{r.income_amount}} $</th>
 
-  <td><button type="button" data-toggle="modal" data-target="#viewRevenue" class="btn btn-primary btn-sm"><i
-        class="fas fa-address-book"></i></button>
-    <button type="button" data-toggle="modal" data-target="#editRevenue" class="btn btn-warning btn-sm"><i
-        class="fas fa-edit"></i></button>
-    <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
-  </td>
-</tr>
-
-        <tr>
-          <th scope="col" class="sort" data-sort="name">23/10/2020</th>
-          <th scope="col" class="sort" data-sort="budget">ReviewCareers</th>
-          <th scope="col" class="sort" data-sort="status">Chèque</th>
-          <th scope="col">FRA 3555 6664 3444 23</th>
-          <th scope="col" class="sort" data-sort="completion">23232 $</th>
-
-          <td><button type="button" data-toggle="modal" data-target="#viewRevenue" class="btn btn-primary btn-sm"><i
-                class="fas fa-address-book"></i></button>
-            <button type="button" data-toggle="modal" data-target="#editRevenue" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
+          <td>
+            <button (click)="edit(r.id)" type="button" data-toggle="modal" data-target="#editRevenue"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button (click)="delete(r.id)" type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i
+                class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
+
+
 
       </tbody>
       <tfoot class="thead-light">
@@ -62,68 +49,8 @@
     <button type="button" data-toggle="modal" data-target="#addRevenue" class="btn btn-success btn-sm"><i
         class="fas fa-plus-circle"></i> Ajouter</button>
 
-    <div class="modal fade" id="addRevenue" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-add-revenue></app-add-revenue>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
+    <app-modal-revenue></app-modal-revenue>
 
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="editRevenue" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-edit-revenue></app-edit-revenue>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="viewRevenue" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-view-revenue></app-view-revenue>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <!-- Card footer -->
 

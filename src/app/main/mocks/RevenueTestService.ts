@@ -7,32 +7,41 @@ import Service from "../interfaces/Service";
 })
 export default class RevenueTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _revenue = []
+    static _revenue = [{
+        "id": 1,
+        "income_paymentDate": "23 / 10 / 2020",
+        "customer_id": "ReviewCareers",
+        "income_paymentType": "Chèque",
+        "income_paymentAccount": "FRA 3555 6664 3444 23",
+        "income_amount": "23232",
+        "income_details": "string"
+    }]
+
     static id = 0
 
     public getAll() {
-        return this._revenue;
+        return RevenueTestService._revenue;
     }
 
     public get(id) {
-        return this._revenue.find(item => item.id === id);
+        return RevenueTestService._revenue.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = RevenueTestService.id
-        this._revenue.push(data);
+        RevenueTestService._revenue.push(data);
         RevenueTestService.id++
         console.log(data)
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._revenue.findIndex(item => item === old);
-        this._revenue[foundIndex] = data;
+        var foundIndex = RevenueTestService._revenue.findIndex(item => item.id === data.id);
+        RevenueTestService._revenue[foundIndex] = data;
     };
 
     public remove(id) {
-        this._revenue.splice(id, 1);
+        RevenueTestService._revenue.splice(id, 1);
     };
 
 

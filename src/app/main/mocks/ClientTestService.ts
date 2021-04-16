@@ -7,32 +7,36 @@ import Service from "../interfaces/Service";
 })
 export default class ClientTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _client = []
+    static _client = [{
+        "id": 1, "customer_name": "Vernon Favreau", "customer_email": "VernonFavreau@dayrep.com",
+        "customer_phone": "03.92.27.52.78", "customer_address": "47, Chemin Du Lavarin Sud 62100 CALAIS",
+        "status_id": "Active", "customer_description": ""
+    }]
     static id = 0
 
     public getAll() {
-        return this._client;
+        return ClientTestService._client;
     }
 
     public get(id) {
-        return this._client.find(item => item.id === id);
+        return ClientTestService._client.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = ClientTestService.id
-        this._client.push(data);
+        ClientTestService._client.push(data);
         ClientTestService.id++
         console.log(data)
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._client.findIndex(item => item === old);
-        this._client[foundIndex] = data;
+        var foundIndex = ClientTestService._client.findIndex(item => item.id === data.id);
+        ClientTestService._client[foundIndex] = data;
     };
 
     public remove(id) {
-        this._client.splice(id, 1);
+        ClientTestService._client.splice(id, 1);
     };
 
 

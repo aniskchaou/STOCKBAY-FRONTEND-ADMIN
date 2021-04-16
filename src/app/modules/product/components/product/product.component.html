@@ -17,32 +17,21 @@
         </tr>
       </thead>
       <tbody class="list">
-<tr *ngFor="let p of products$">
-  <td scope="col" class="sort" data-sort="name">{{p.product_name}}</td>
-  <td scope="col" class="sort" data-sort="budget">{{p.category_id}}</td>
-  <td scope="col" class="sort" data-sort="status">{{p.supplier_id}}</td>
-  <td scope="col">{{p.product_sellPrice}} $</td>
-  <td scope="col" class="sort" data-sort="completion">{{p.product_alertquantity}}</td>
-  <td>
-    <button type="button" data-toggle="modal" data-target="#editProduct" class="btn btn-warning btn-sm"><i
-        class="fas fa-edit"></i></button>
-    <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
-  </td>
-</tr>
-
-        <tr>
-          <td scope="col" class="sort" data-sort="name">IPhone 6s</td>
-          <td scope="col" class="sort" data-sort="budget">électroménager</td>
-          <td scope="col" class="sort" data-sort="status">RodeoAwards</td>
-          <td scope="col">2330$</td>
-          <td scope="col" class="sort" data-sort="completion">5</td>
+        <tr *ngFor="let p of products$">
+          <td scope="col" class="sort" data-sort="name">{{p.product_name}}</td>
+          <td scope="col" class="sort" data-sort="budget">{{p.category_id}}</td>
+          <td scope="col" class="sort" data-sort="status">{{p.supplier_id}}</td>
+          <td scope="col">{{p.product_sellPrice}} $</td>
+          <td scope="col" class="sort" data-sort="completion">{{p.product_alertquantity}}</td>
           <td>
-            <button type="button" data-toggle="modal" data-target="#editProduct" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i
+            <button type="button" (click)="edit(p.id)" data-toggle="modal" data-target="#editProduct"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(p.id)"><i
                 class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
+
+
       </tbody>
       <tfoot class="thead-light">
         <tr>
@@ -58,68 +47,8 @@
     <button data-toggle="modal" data-target="#addProduct" type="button" class="btn btn-success btn-sm"><i
         class="fas fa-plus-circle"></i> Ajouter</button>
 
-    <div class="modal fade" id="addProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-add-product></app-add-product>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-modal-product></app-modal-product>
 
-    <div class="modal fade" id="editProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-edit-product></app-edit-product>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="viewProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-view-product></app-view-product>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <!-- Card footer -->
 

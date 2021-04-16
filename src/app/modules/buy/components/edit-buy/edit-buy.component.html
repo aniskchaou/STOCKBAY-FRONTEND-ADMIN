@@ -1,7 +1,6 @@
-<form class="form-horizontal">
+<form class="form-horizontal" name="myForm" #myForm="ngForm">
     <div class="row">
         <div class="col-sm-6">
-        
             <div class="form-group"><label for="supplier_id" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -10,7 +9,10 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select [(ngModel)]="model.supplier" id="supplier_id" name="supplier_id" class="form-control">
+                <div class="col-sm-8">
+
+                    <select [(ngModel)]="model.supplier" formControlName="supplier" id="supplier_id" name="supplier"
+                        class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionnez un fournisseur</font>
@@ -21,20 +23,12 @@
                                 <font style="vertical-align: inherit;">Chandra</font>
                             </font>
                         </option>
-                        <option value="52">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Gulabi Goat Farm Islamabad</font>
-                            </font>
-                        </option>
-                        <option value="54">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">sg</font>
-                            </font>
-                        </option>
                     </select>
                     <!---->
                 </div>
             </div>
+
+
             <div class="form-group"><label for="purchase_date" class="col-sm-4 control-label">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -45,9 +39,11 @@
                 </label>
                 <div class="col-sm-8">
                     <div class="input-group date">
-                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div> <input type="date"
-                            name="purchase_date" [(ngModel)]="model.purchase_date" id="purchase_date" placeholder="AAAA-MM-JJ"
-                            class="form-control datepicker pull-right" value="{{model.purchase_date }}">
+                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+
+                        <input [(ngModel)]="model.purchase_date" value="{{model.purchase_date}}" type="date"
+                            formControlName="purchase_date" name="purchase_date" id="purchase_date"
+                            placeholder="AAAA-MM-JJ" class="form-control datepicker pull-right">
                     </div>
                     <!---->
                 </div>
@@ -62,8 +58,10 @@
                     </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
                         class="fa fa-asterisk require text-danger" data-original-title="Required"></i>
                 </label>
-                <div class="col-sm-8"><select [(ngModel)]="model.purchase_status" name="purchase_status" id="purchase_status"
-                        class="form-control">
+                <div class="col-sm-8">
+
+                    <select [(ngModel)]="model.purchase_status" formControlName="purchase_status" name="purchase_status"
+                        id="purchase_status" class="form-control">
                         <option value="">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit;">Sélectionner</font>
@@ -86,6 +84,7 @@
                         </option>
                     </select>
                     <!---->
+
                 </div>
             </div>
             <div class="form-group"><label for="purchase_invoiceNo" class="col-sm-4 control-label">
@@ -95,8 +94,13 @@
                         </font>
                     </font>
                 </label>
-                <div class="col-sm-8"><input type="text" name="purchase_invoiceNo" id="purchase_invoiceNo"
-                    [(ngModel)]="model.purchase_invoiceNo" value="{{model.purchase_invoiceNo}}" placeholder="No de facture" class="form-control">
+                <div class="col-sm-8">
+
+                    <input [(ngModel)]="model.purchase_invoiceNo" type="text" formControlName="purchase_invoiceNo"
+                        name="purchase_invoiceNo" id="purchase_invoiceNo" value={{model.purchase_invoiceNo}}
+                        placeholder="No de facture" class="form-control">
+
+
                     <!---->
                 </div>
             </div>
@@ -135,7 +139,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><select name="product_id" id="product_id" class="form-control">
+                        <td>
+
+                            <select formControlName="product_id" name="product_id" id="product_id" class="form-control">
                                 <option value="">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Sélectionner un produit</font>
@@ -146,17 +152,9 @@
                                         <font style="vertical-align: inherit;">iphone 11pro max</font>
                                     </font>
                                 </option>
-                                <option value="87">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">ddr3</font>
-                                    </font>
-                                </option>
-                                <option value="88">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Livre</font>
-                                    </font>
-                                </option>
-                            </select></td>
+
+                            </select>
+                        </td>
                         <td><input disabled="disabled" type="number" step="any" name="product_supplierPrice"
                                 id="product_supplierPrice" placeholder="Prix" class="form-control"></td>
                         <td><input type="number" min="0" name="purchase_quantity" id="purchase_quantity"
@@ -185,11 +183,14 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
-                <div class="col-sm-8 col-sm-offset-4"><button type="button" class="btn btn-info">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;" (click)="edit()">Enregistrer</font>
-                        </font>
-                    </button></div>
+                <button (click)="edit()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
+                <button type="button" class="btn btn-danger">
+                    <i class="fas fa-times"></i>
+                    Annuler
+                </button>
             </div>
         </div>
         <div class="col-sm-6"></div>

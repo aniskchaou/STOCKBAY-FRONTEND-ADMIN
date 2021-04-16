@@ -7,32 +7,40 @@ import Service from "../interfaces/Service";
 })
 export default class ExpenseTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _stock = []
+    static _stock = [{
+        id: 1,
+        "expense_paymentDate": "22/11/2020",
+        "supplier_id": "string",
+        "expense_paymentType": "virement",
+        "expense_paymentAccount": "FRA 3423 434 23423",
+        "expense_amount": "34234",
+        "expense_details": "string"
+    }]
     static id = 0
 
     public getAll() {
-        return this._stock;
+        return ExpenseTestService._stock;
     }
 
     public get(id) {
-        return this._stock.find(item => item.id === id);
+        return ExpenseTestService._stock.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = ExpenseTestService.id
-        this._stock.push(data);
+        ExpenseTestService._stock.push(data);
         ExpenseTestService.id++
         console.log(data)
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._stock.findIndex(item => item === old);
-        this._stock[foundIndex] = data;
+        var foundIndex = ExpenseTestService._stock.findIndex(item => item.id === data.id);
+        ExpenseTestService._stock[foundIndex] = data;
     };
 
     public remove(id) {
-        this._stock.splice(id, 1);
+        ExpenseTestService._stock.splice(id, 1);
     };
 
 

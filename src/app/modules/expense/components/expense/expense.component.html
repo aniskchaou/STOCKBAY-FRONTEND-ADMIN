@@ -23,75 +23,23 @@
           <td scope="col" class="sort" data-sort="status">{{s.expense_paymentType}}</td>
           <td scope="col">{{s.expense_paymentAccount}}</td>
           <td scope="col" class="sort" data-sort="completion">{{s.expense_amount}}</td>
-  
-          <td><button type="button" data-toggle="modal" data-target="#viewExpense" class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
-            <button type="button" data-toggle="modal" data-target="#editExpense" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button></td>
+
+          <td>
+            <button type="button" (click)="edit(s.id)" data-toggle="modal" data-target="#editExpense"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" (click)="delete(s.id)" class="btn btn-danger btn-sm" onClick={deleteTask}><i
+                class="fas fa-trash-alt"></i></button>
+          </td>
         </tr>
       </tbody>
     </table>
     <button type="button" data-toggle="modal" data-target="#addExpense" class="btn btn-success btn-sm"><i
         class="fas fa-plus-circle"></i> Ajouter</button>
 
-    <div class="modal fade" id="viewExpense" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-view-expense></app-view-expense>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-modal-expense></app-modal-expense>
 
-    <div class="modal fade" id="editExpense" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-edit-expense></app-edit-expense>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="modal fade" id="addExpense" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-add-expense></app-add-expense>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
   <!-- Card footer -->
 

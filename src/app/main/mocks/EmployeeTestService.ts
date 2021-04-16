@@ -7,32 +7,46 @@ import Service from "../interfaces/Service";
 })
 export default class EmployeeTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _employee = []
+    static _employee = [{
+        "id": 1,
+        "employee_fname": "Eglantine Deschênes",
+        "employee_email": "EglantineDeschenes@teleworm.us",
+        "employee_phone": "01.50.38.11.50",
+        "employee_gender": "string",
+        "employee_nid": "string",
+        "status_id": "active",
+        "employee_birthday": "string",
+        "employee_address": "84, Quai des Belges 77100 MEAUX",
+        "employee_salary": "33.000"
+    }]
+
+
+
     static id = 0
 
     public getAll() {
-        return this._employee;
+        return EmployeeTestService._employee;
     }
 
     public get(id) {
-        return this._employee.find(item => item.id === id);
+        return EmployeeTestService._employee.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = EmployeeTestService.id
-        this._employee.push(data);
+        EmployeeTestService._employee.push(data);
         EmployeeTestService.id++
         console.log(data)
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._employee.findIndex(item => item === old);
-        this._employee[foundIndex] = data;
+        var foundIndex = EmployeeTestService._employee.findIndex(item => item.id === data.id);
+        EmployeeTestService._employee[foundIndex] = data;
     };
 
     public remove(id) {
-        this._employee.splice(id, 1);
+        EmployeeTestService._employee.splice(id, 1);
     };
 
 

@@ -55,27 +55,39 @@ import { ViewSupplierComponent } from './modules/supplier/components/view-suppli
 import { EditProductComponent } from './modules/product/components/edit-product/edit-product.component';
 import { AddRevenueComponent } from './modules/revenue/components/add-revenue/add-revenue.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './template/header/header.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { SideNavigationComponent } from './template/side-navigation/side-navigation.component';
+import { ModalBuyComponent } from './modules/buy/components/modal-buy/modal-buy.component';
+import { ModalCategoryComponent } from './modules/category/components/modal-category/modal-category.component';
+import { ModalEmployeeComponent } from './modules/employee/components/modal-employee/modal-employee.component';
+import { ModalRevenueComponent } from './modules/revenue/components/modal-revenue/modal-revenue.component';
+import { ModalClientComponent } from './modules/client/components/modal-client/modal-client.component';
+import { ModalExpenseComponent } from './modules/expense/components/modal-expense/modal-expense.component';
+import { ModalProductComponent } from './modules/product/components/modal-product/modal-product.component';
+import { ModalSaleComponent } from './modules/sale/components/modal-sale/modal-sale.component';
+import { ModalSupplierComponent } from './modules/supplier/components/modal-supplier/modal-supplier.component';
 
 
-const routes:Routes=[
-  {path:'category',component:CategoryComponent,pathMatch:'full'},
-  {path:'buy',component:BuyComponent,pathMatch:'full'},
-  {path:'category',component:CategoryComponent,pathMatch:'full'},
-  {path:'client',component:ClientComponent,pathMatch:'full'},
-  {path:'employee',component:EmployeeComponent,pathMatch:'full'},
-  {path:'expense',component:ExpenseComponent,pathMatch:'full'},
-  {path:'product',component:ProductComponent,pathMatch:'full'},
-  {path:'revenue',component:RevenueComponent,pathMatch:'full'},
-  {path:'sale',component:SaleComponent,pathMatch:'full'},
-  {path:'stock',component:StockComponent,pathMatch:'full'},
-  {path:'supplier',component:SupplierComponent,pathMatch:'full'},
-  {path:'dashboard',component:DashboardComponent,pathMatch:'full'},
-  {path:'login',component:LoginComponent,pathMatch:'full'},
-  {path:'configuration',component:ConfigurationComponent,pathMatch:'full'},
-  {path:'profile',component:ProfileComponent,pathMatch:'full'},
-  {path:'editprofile',component:EditprofileComponent,pathMatch:'full'},
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'**',redirectTo:'login',pathMatch:'full'}]
+const routes: Routes = [
+  { path: 'category', component: CategoryComponent, pathMatch: 'full' },
+  { path: 'buy', component: BuyComponent, pathMatch: 'full' },
+  { path: 'category', component: CategoryComponent, pathMatch: 'full' },
+  { path: 'client', component: ClientComponent, pathMatch: 'full' },
+  { path: 'employee', component: EmployeeComponent, pathMatch: 'full' },
+  { path: 'expense', component: ExpenseComponent, pathMatch: 'full' },
+  { path: 'product', component: ProductComponent, pathMatch: 'full' },
+  { path: 'revenue', component: RevenueComponent, pathMatch: 'full' },
+  { path: 'sale', component: SaleComponent, pathMatch: 'full' },
+  { path: 'stock', component: StockComponent, pathMatch: 'full' },
+  { path: 'supplier', component: SupplierComponent, pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'configuration', component: ConfigurationComponent, pathMatch: 'full' },
+  { path: 'profile', component: ProfileComponent, pathMatch: 'full' },
+  { path: 'editprofile', component: EditprofileComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login', pathMatch: 'full' }]
 
 
 @NgModule({
@@ -129,7 +141,26 @@ const routes:Routes=[
     ViewSupplierComponent,
     EditProductComponent,
     AddRevenueComponent,
-    
+    HeaderComponent,
+    FooterComponent,
+    SideNavigationComponent,
+    ModalBuyComponent,
+    ModalRevenueComponent,
+    ModalClientComponent,
+    ModalExpenseComponent,
+    ModalProductComponent,
+    ModalSaleComponent,
+    ModalSupplierComponent,
+    ModalRevenueComponent,
+    ModalCategoryComponent,
+    ModalEmployeeComponent,
+    AddCategoryComponent,
+    EditCategoryComponent,
+    ViewCategoryComponent,
+    AddEmployeeComponent,
+    EditEmployeeComponent,
+    ViewEmployeeComponent
+
   ],
   imports: [
     BrowserModule,
@@ -137,7 +168,7 @@ const routes:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: ''}],
+  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

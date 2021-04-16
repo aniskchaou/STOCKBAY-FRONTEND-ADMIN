@@ -7,31 +7,36 @@ import Service from "../interfaces/Service";
 })
 export default class CategoryTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _category = []
+    static _category = [{
+        "id": 0,
+        "category_name": "électroménager",
+        "status_id": "Active",
+        "category_details": ""
+    }]
     static id = 0
 
     public getAll() {
-        return this._category;
+        return CategoryTestService._category;
     }
 
     public get(id) {
-        return this._category.find(item => item.id === id);
+        return CategoryTestService._category.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = CategoryTestService.id
-        this._category.push(data);
+        CategoryTestService._category.push(data);
         CategoryTestService.id++
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._category.findIndex(item => item === old);
-        this._category[foundIndex] = data;
+        var foundIndex = CategoryTestService._category.findIndex(item => item.id === data.id);
+        CategoryTestService._category[foundIndex] = data;
     };
 
     public remove(id) {
-        this._category.splice(id, 1);
+        CategoryTestService._category.splice(id, 1);
     };
 
 

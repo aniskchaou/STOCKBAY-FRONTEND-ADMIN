@@ -7,32 +7,31 @@ import Service from "../interfaces/Service";
 })
 export default class StockTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _stock = []
+    static _stock = []
     static id = 0
 
     public getAll() {
-        return this._stock;
+        return StockTestService._stock;
     }
 
     public get(id) {
-        return this._stock.find(item => item.id === id);
+        return StockTestService._stock.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = StockTestService.id
-        this._stock.push(data);
+        StockTestService._stock.push(data);
         StockTestService.id++
-        console.log(data)
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._stock.findIndex(item => item === old);
-        this._stock[foundIndex] = data;
+        var foundIndex = StockTestService._stock.findIndex(item => item.id === data.id);
+        StockTestService._stock[foundIndex] = data;
     };
 
     public remove(id) {
-        this._stock.splice(id, 1);
+        StockTestService._stock.splice(id, 1);
     };
 
 

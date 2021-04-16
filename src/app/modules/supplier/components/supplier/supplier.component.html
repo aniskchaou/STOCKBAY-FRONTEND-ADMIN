@@ -17,33 +17,21 @@
         </tr>
       </thead>
       <tbody class="list">
-<tr *ngFor="let s of suppliers$">
-  <td scope="col" class="sort" data-sort="name">{{s.supplier_name}}</td>
-  <td scope="col" class="sort" data-sort="budget">{{s.supplier_email}}</td>
-  <td scope="col" class="sort" data-sort="status">{{s.supplier_phone}}</td>
-  <td scope="col">{{s.supplier_address}}</td>
-  <td scope="col" class="sort" data-sort="completion"><span class="badge bg-success">Active</span></td>
-  <td>
-    <button type="button" data-toggle="modal" data-target="#editSupplier" class="btn btn-warning btn-sm"><i
-        class="fas fa-edit"></i></button>
-    <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i class="fas fa-trash-alt"></i></button>
-  </td>
-</tr>
-
-        <tr>
-          <td scope="col" class="sort" data-sort="name">CommonFit</td>
-          <td scope="col" class="sort" data-sort="budget">FabriceLesperance@armyspy.com</td>
-          <td scope="col" class="sort" data-sort="status">05.13.88.01.67</td>
-          <td scope="col">4, rue des Coudriers
-            31600 MURET</td>
+        <tr *ngFor="let s of suppliers$">
+          <td scope="col" class="sort" data-sort="name">{{s.supplier_name}}</td>
+          <td scope="col" class="sort" data-sort="budget">{{s.supplier_email}}</td>
+          <td scope="col" class="sort" data-sort="status">{{s.supplier_phone}}</td>
+          <td scope="col">{{s.supplier_address}}</td>
           <td scope="col" class="sort" data-sort="completion"><span class="badge bg-success">Active</span></td>
           <td>
-            <button type="button" data-toggle="modal" data-target="#editSupplier" class="btn btn-warning btn-sm"><i
-                class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i
+            <button (click)="edit(s.id)" type="button" data-toggle="modal" data-target="#editSupplier"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="delete(s.id)"><i
                 class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
+
+
       </tbody>
       <tfoot class="thead-light">
         <tr>
@@ -59,69 +47,10 @@
     <button type="button" data-toggle="modal" data-target="#addSupplier" class="btn btn-success btn-sm"><i
         class="fas fa-plus-circle"></i> Ajouter</button>
 
-    <div class="modal fade" id="addSupplier" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-add-supplier></app-add-supplier>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-modal-supplier></app-modal-supplier>
 
-    <div class="modal fade" id="editSupplier" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <app-edit-supplier></app-edit-supplier>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="modal fade" id="viewSupplier" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Fermer</button>
-              
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <!-- Card footer -->
- 
+
 </div>
