@@ -1,7 +1,7 @@
 <div class="card">
   <!-- Card header -->
   <div class="card-header border-0">
-    <h3 class="mb-0">Ventes</h3>
+    <h3 class="mb-0">Sales</h3>
   </div>
   <!-- Light table -->
   <div class="table-responsive">
@@ -9,52 +9,52 @@
       <thead class="thead-light">
         <tr>
           <th scope="col" class="sort" data-sort="budget">Client</th>
-          <th scope="col" class="sort" data-sort="status">Statut</th>
-          <th scope="col">Quantité</th>
-          <th scope="col" class="sort" data-sort="completion">Prix</th>
-          <th scope="col">Total</th>
+          <th scope="col" class="sort" data-sort="status">Status</th>
           <th scope="col">Date</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr *ngFor="let s of sells$">
-          <td scope="col" class="sort" data-sort="budget">{{s.customer_id}}</td>
-          <td scope="col" class="sort" data-sort="status">{{s.sale_status}}</td>
-          <td scope="col">5</td>
-          <td scope="col" class="sort" data-sort="completion">20000 $</td>
-          <td scope="col">10000 $</td>
-          <td scope="col">{{s.sale_date}}</td>
+          <td scope="col" class="sort" data-sort="budget">
+            {{ s.customer_id.customer_name }}
+          </td>
+          <td scope="col" class="sort" data-sort="status">
+            {{ s.sale_status }}
+          </td>
+          <td scope="col">{{ s.sale_date }}</td>
           <td>
-            <button (click)="edit(s.id)" type="button" data-toggle="modal" data-target="#editSale"
-              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" (click)="delete(s.id)"><i
-                class="fas fa-trash-alt"></i></button>
+            <!--  <button (click)="edit(s.id)" type="button" data-toggle="modal" data-target="#editSale"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>-->
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="delete(s.id)"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
-
-
-
-
       </tbody>
       <tfoot class="thead-light">
         <tr>
           <th scope="col" class="sort" data-sort="budget">Client</th>
-          <th scope="col" class="sort" data-sort="status">Statut</th>
-          <th scope="col">Quantité</th>
-          <th scope="col" class="sort" data-sort="completion">Prix</th>
-          <th scope="col">Total</th>
+          <th scope="col" class="sort" data-sort="status">Status</th>
           <th scope="col">Date</th>
           <th>Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button type="button" data-toggle="modal" data-target="#addSale" class="btn btn-success btn-sm"><i
-        class="fas fa-plus-circle"></i> Ajouter</button>
+    <button
+      type="button"
+      data-toggle="modal"
+      data-target="#addSale"
+      class="btn btn-success btn-sm"
+    >
+      <i class="fas fa-plus-circle"></i> Create
+    </button>
 
     <app-modal-sale></app-modal-sale>
-
   </div>
   <!-- Card footer -->
-
 </div>

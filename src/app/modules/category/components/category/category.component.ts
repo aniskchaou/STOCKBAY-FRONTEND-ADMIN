@@ -32,7 +32,7 @@ export class CategoryComponent extends URLLoader implements OnInit {
   }
 
   delete(id) {
-    var r = confirm("Voulez-vous supprimer cet enregistrement ?");
+    var r = confirm("Are you sure you want remove this record ?");
     if (r) {
       this.setId(id)
       this.categoryTestService.remove(parseInt(id))

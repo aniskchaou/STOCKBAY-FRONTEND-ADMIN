@@ -6,13 +6,19 @@ import { Injectable } from "@angular/core"
 export default class RevenueMessage {
 
     confirmations = {
-        'title': 'confirmation', 'add': 'revenue a été ajouté avec succès',
+        'title': 'confirmation',
+         'add': 'Income has been added',
         'edit': 'revenue a été modifié avec succès',
-        'delete': 'revenue a été supprimé avec succès'
+        'delete': 'Income has been removed'
     }
     validations = {
-        'purchase_invoiceNo': 'facture No doit etre definie.',
-        'date_buy': 'date achat doit etre definie.'
+        
+        "income_paymentDate": "Payment date is required",
+        "customer_id": "Customer is required",
+        "income_paymentType": "Payment Type is required",
+        "income_paymentAccount": "Account is required",
+        "income_amount": "Amount is required",
+        "income_details": "Details is required"
     }
 
     constructor() {

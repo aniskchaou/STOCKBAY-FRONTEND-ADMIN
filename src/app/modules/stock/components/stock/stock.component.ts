@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Stock from 'src/app/main/models/Stock';
 import { URLLoader } from '../../../../main/configs/URLLoader';
 
 @Component({
@@ -8,9 +9,13 @@ import { URLLoader } from '../../../../main/configs/URLLoader';
 })
 export class StockComponent extends URLLoader implements OnInit {
 
-  showsummary:boolean=false
-  showgraphic:boolean=false
-  
+   stock$:Stock[]=[{
+        "id": 1,
+        "name": "",
+        "status": "",
+        "details": ""
+    }]
+
   constructor() {
     super()
    }

@@ -6,14 +6,16 @@ import { Injectable } from "@angular/core"
 export default class BuyMessage {
 
     confirmations = {
-        'title': 'confirmation',
-        'add': 'achat a été ajouté avec succès',
+        'title': 'Confirmation',
+        'add': 'Purchases has been added',
         'edit': 'achat a été modifié avec succès',
-        'delete': 'achat a été supprimé avec succès'
+        'delete': 'Purchases has been removed'
     }
-    validations = {
-        'purchase_invoiceNo': 'facture No doit etre definie.',
-        'date_buy': 'date achat doit etre definie.'
+    validationMessage = {
+         "supplier": "Supplier is required",
+        "purchase_invoiceNo": "Invoice is required",
+        "purchase_status": "Status is required",
+        "purchase_date": "Date is required"
     }
 
     constructor() {

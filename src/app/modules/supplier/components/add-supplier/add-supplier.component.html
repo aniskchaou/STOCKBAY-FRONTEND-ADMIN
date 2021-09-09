@@ -1,147 +1,268 @@
 <form class="form-horizontal" [formGroup]="supplierForm">
-    <div class="row">
-        <div class="col-sm-6">
-        
-            <div class="form-group"><label for="supplier_name" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Nom du fournisseur
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input type="text" [ngClass]="{ 'is-invalid': submitted && f.supplier_name.errors }"
-                        formControlName="supplier_name" name="supplier_name" id="supplier_name"
-                        placeholder="Nom du fournisseur" class="form-control">
-                    <!---->
-                </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="supplier_name" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Supplier </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && f.supplier_name.errors }"
+            formControlName="supplier_name"
+            name="supplier_name"
+            id="supplier_name"
+            placeholder="Nom du fournisseur"
+            class="form-control"
+          />
+          <div
+            *ngIf="submitted && f.supplier_name.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.supplier_name.errors.required">
+              {{ msg.validations.supplier_name }}
             </div>
-
-
-            <div class="form-group"><label for="supplier_phone" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Téléphone du fournisseur
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input type="tel" [ngClass]="{ 'is-invalid': submitted && f.supplier_phone.errors }"
-                        formControlName="supplier_phone" name="supplier_phone" id="supplier_phone"
-                        placeholder="Téléphone du fournisseur" class="form-control">
-                    <!---->
-                </div>
-            </div>
-
-
-            <div class="form-group"><label for="supplier_email" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Email du fournisseur
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input type="email" [ngClass]="{ 'is-invalid': submitted && f.supplier_email.errors }"
-                        formControlName="supplier_email" name="supplier_email" id="supplier_email"
-                        placeholder="Email du fournisseur" class="form-control">
-                    <!---->
-                </div>
-            </div>
-
-
-            <div class="form-group"><label for="supplier_company" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Entreprise fournisseur
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input type="text" [ngClass]="{ 'is-invalid': submitted && f.supplier_company.errors }"
-                        formControlName="supplier_company" name="supplier_company" id="supplier_company"
-                        placeholder="Entreprise fournisseur" class="form-control">
-                    <!---->
-                </div>
-            </div>
+          </div>
+          <!---->
         </div>
+      </div>
 
-
-        <div class="col-sm-6">
-            <div class="form-group"><label for="status_id" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Statut
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><select type="text" id="status_id" [ngClass]="{ 'is-invalid': submitted && f.status_id.errors }"
-                        formControlName="status_id" name="status_id" class="form-control">
-                        <option value="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sélectionnez le statut</font>
-                            </font>
-                        </option>
-                        <option value="0">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Inactif</font>
-                            </font>
-                        </option>
-                        <option value="1">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">actif</font>
-                            </font>
-                        </option>
-                    </select>
-                    <!---->
-                </div>
+      <div class="form-group">
+        <label for="supplier_phone" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Phone </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            type="tel"
+            [ngClass]="{ 'is-invalid': submitted && f.supplier_phone.errors }"
+            formControlName="supplier_phone"
+            name="supplier_phone"
+            id="supplier_phone"
+            placeholder="Téléphone du fournisseur"
+            class="form-control"
+          />
+          <div
+            *ngIf="submitted && f.supplier_phone.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.supplier_phone.errors.required">
+              {{ msg.validations.supplier_phone }}
             </div>
-
-
-            <div class="form-group"><label for="supplier_address" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Adresse du fournisseur
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><textarea id="supplier_address"
-                        [ngClass]="{ 'is-invalid': submitted && f.supplier_address.errors }" formControlName="supplier_address"
-                        name="supplier_address" rows="2"
-                        placeholder="Entrer ..." class="form-control"></textarea></div>
-            </div>
-
-
-            <div class="form-group"><label for="supplier_description" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Détails du fournisseur
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><textarea id="supplier_description"
-                        [ngClass]="{ 'is-invalid': submitted && f.supplier_description.errors }" formControlName="supplier_description"
-                        name="supplier_description" rows="2"
-                        placeholder="Entrer ..." class="form-control"></textarea></div>
-            </div>
-
-
+          </div>
+          <!---->
         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="supplier_email" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Email </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            type="email"
+            [ngClass]="{ 'is-invalid': submitted && f.supplier_email.errors }"
+            formControlName="supplier_email"
+            name="supplier_email"
+            id="supplier_email"
+            placeholder="Email du fournisseur"
+            class="form-control"
+          />
+          <div
+            *ngIf="submitted && f.supplier_email.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.supplier_email.errors.required">
+              {{ msg.validations.supplier_email }}
+            </div>
+          </div>
+          <!---->
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="supplier_company" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Entreprise </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && f.supplier_company.errors }"
+            formControlName="supplier_company"
+            name="supplier_company"
+            id="supplier_company"
+            placeholder="Entreprise fournisseur"
+            class="form-control"
+          />
+          <div
+            *ngIf="submitted && f.supplier_company.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.supplier_company.errors.required">
+              {{ msg.validations.supplier_company }}
+            </div>
+          </div>
+          <!---->
+        </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group">
-                <button (click)="add()" type="button" class="btn btn-info">
-                    <i class="fas fa-save"></i>
-                    Sauvegarder
-                </button>
-                <button (click)="reset()" type="button" class="btn btn-danger">
-                    <i class="fas fa-times"></i>
-                    Annuler
-                </button>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="status_id" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Status </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <select
+            type="text"
+            id="status_id"
+            [ngClass]="{ 'is-invalid': submitted && f.status_id.errors }"
+            formControlName="status_id"
+            name="status_id"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option value="Active">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Active</font>
+              </font>
+            </option>
+            <option value="Inactive">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Inactive</font>
+              </font>
+            </option>
+          </select>
+          <div
+            *ngIf="submitted && f.status_id.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.status_id.errors.required">
+              {{ msg.validations.status_id }}
             </div>
+          </div>
+          <!---->
         </div>
-        <div class="col-sm-6"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="supplier_address" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Address </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <textarea
+            id="supplier_address"
+            [ngClass]="{ 'is-invalid': submitted && f.supplier_address.errors }"
+            formControlName="supplier_address"
+            name="supplier_address"
+            rows="2"
+            placeholder="Entrer ..."
+            class="form-control"
+          ></textarea>
+          <div
+            *ngIf="submitted && f.supplier_address.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.supplier_address.errors.required">
+              {{ msg.validations.supplier_address }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="supplier_description" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Details </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <textarea
+            id="supplier_description"
+            [ngClass]="{
+              'is-invalid': submitted && f.supplier_description.errors
+            }"
+            formControlName="supplier_description"
+            name="supplier_description"
+            rows="2"
+            placeholder="Entrer ..."
+            class="form-control"
+          ></textarea>
+          <div
+            *ngIf="submitted && f.supplier_description.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.supplier_description.errors.required">
+              {{ msg.validations.supplier_description }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <button (click)="add()" type="button" class="btn btn-info">
+          <i class="fas fa-save"></i>
+          Save
+        </button>
+        <button (click)="reset()" type="button" class="btn btn-danger">
+          <i class="fas fa-times"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-6"></div>
+  </div>
 </form>

@@ -1,112 +1,179 @@
 <form [formGroup]="sellForm">
-<div class="row">
+  <div class="row">
     <div class="col-sm-6">
-
-
-        <div class="form-group"><label for="customer_id" class="col-sm-4 control-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        Nom du client
-                    </font>
-                </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                    class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-            </label>
-            <div class="col-sm-8"><select id="customer_id" [ngClass]="{ 'is-invalid': submitted && f.customer_id.errors }"
-                    formControlName="customer_id" name="customer_id" class="form-control">
-                    <option value="">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Sélectionnez un client</font>
-                        </font>
-                    </option>
-                    <option value="10">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Ashley Hermann</font>
-                        </font>
-                    </option>
-            
-                </select>
-                <!---->
+      <div class="form-group">
+        <label for="customer_id" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Name </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <select
+            id="customer_id"
+            [ngClass]="{ 'is-invalid': submitted && f.customer_id.errors }"
+            formControlName="customer_id"
+            name="customer_id"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option value="0">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">John Doe</font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.customer_id.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.customer_id.errors.required">
+              {{ msg.validations.customer_id }}
             </div>
+          </div>
         </div>
+      </div>
 
-
-        <div class="form-group"><label for="sale_date" class="col-sm-4 control-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        Date
-                    </font>
-                </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                    class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-            </label>
-            <div class="col-sm-8">
-                <div class="input-group date">
-                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div> <input type="date"
-                    [ngClass]="{ 'is-invalid': submitted && f.sale_date.errors }"
-                     formControlName="sale_date" name="sale_date" id="sale_date" placeholder="AAAA-MM-JJ"
-                        class="form-control datepicker pull-right">
-                </div>
-                <!---->
+      <div class="form-group">
+        <label for="sale_date" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Date </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+            <input
+              type="date"
+              [ngClass]="{ 'is-invalid': submitted && f.sale_date.errors }"
+              formControlName="sale_date"
+              name="sale_date"
+              id="sale_date"
+              placeholder="AAAA-MM-JJ"
+              class="form-control datepicker pull-right"
+            />
+          </div>
+          <div
+            *ngIf="submitted && f.sale_date.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.sale_date.errors.required">
+              {{ msg.validations.sale_date }}
             </div>
+          </div>
+          <!---->
         </div>
+      </div>
     </div>
 
     <div class="col-sm-6">
-        <div class="form-group"><label for="sale_status" class="col-sm-4 control-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        Statut
-                    </font>
-                </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                    class="fa fa-asterisk require text-danger" data-original-title="Required"></i>
-            </label>
-            <div class="col-sm-8"><select [ngClass]="{ 'is-invalid': submitted && f.sale_status.errors }"
-                    formControlName="sale_status" name="sale_status" id="sale_status" class="form-control">
-                    <option value="">
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Sélectionner</font>
-                        </font>
-                    </option>
-                    <option>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Livré</font>
-                        </font>
-                    </option>
-                    <option>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">En attente</font>
-                        </font>
-                    </option>
-                    <option>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">Commandé</font>
-                        </font>
-                    </option>
-                </select>
-                <!---->
+      <div class="form-group">
+        <label for="sale_status" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Status </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk require text-danger"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <select
+            [ngClass]="{ 'is-invalid': submitted && f.sale_status.errors }"
+            formControlName="sale_status"
+            name="sale_status"
+            id="sale_status"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Delivred</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Pending</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Ordered</font>
+              </font>
+            </option>
+          </select>
+          <div
+            *ngIf="submitted && f.sale_status.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.sale_status.errors.required">
+              {{ msg.validations.sale_status }}
             </div>
+          </div>
+          <!---->
         </div>
+      </div>
 
-        <div class="form-group"><label for="sale_invoiceNo" class="col-sm-4 control-label">
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">
-                        No de facture
-                    </font>
-                </font>
-            </label>
-            <div class="col-sm-8"><input type="text" [ngClass]="{ 'is-invalid': submitted && f.sale_invoiceNo.errors }"
-                    formControlName="sale_invoiceNo" name="sale_invoiceNo" id="sale_invoiceNo"
-                    placeholder="No de facture" class="form-control">
-                <!---->
+      <div class="form-group">
+        <label for="sale_invoiceNo" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Invoice No </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <input
+            type="text"
+            [ngClass]="{ 'is-invalid': submitted && f.sale_invoiceNo.errors }"
+            formControlName="sale_invoiceNo"
+            name="sale_invoiceNo"
+            id="sale_invoiceNo"
+            placeholder="No de facture"
+            class="form-control"
+          />
+          <!---->
+          <div
+            *ngIf="submitted && f.sale_invoiceNo.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.sale_invoiceNo.errors.required">
+              {{ msg.validations.sale_invoiceNo }}
             </div>
+          </div>
         </div>
-<button (click)="add()" type="button" class="btn btn-info">
-    <i class="fas fa-save"></i>
-    Sauvegarder
-</button>
-<button (click)="reset()" type="button" class="btn btn-danger">
-    <i class="fas fa-times"></i>
-    Annuler
-</button>
+      </div>
+      <button (click)="add()" type="button" class="btn btn-info">
+        <i class="fas fa-save"></i>
+        Save
+      </button>
+      <button (click)="reset()" type="button" class="btn btn-danger">
+        <i class="fas fa-times"></i>
+        Cancel
+      </button>
     </div>
-</div>
+  </div>
 </form>

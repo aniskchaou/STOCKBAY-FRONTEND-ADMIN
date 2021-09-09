@@ -7,13 +7,19 @@ export default class ClientMessage {
 
     confirmations = {
         'title': 'confirmation',
-        'add': 'client a été ajouté avec succès',
+        'add': 'Client has been added',
         'edit': 'client a été modifié avec succès',
-        'delete': 'client a été supprimé avec succès'
+        'delete': 'Client has been removed'
     }
     validations = {
-        'purchase_invoiceNo': 'facture No doit etre definie.',
-        'date_buy': 'date achat doit etre definie.'
+       
+        "customer_name": "Client is required", 
+        "customer_email": "Email is required",
+        "customer_phone": "Phone is required", 
+        "customer_address": "Address is required",
+        "status_id": "Status is required", 
+        "customer_description": "Description is required"
+    
     }
 
     constructor() {

@@ -14,7 +14,7 @@ export default class BuyValidation extends Validation {
     createFormGroup() {
         return new FormGroup({
 
-            supplier: new FormControl('', Validators.required),
+            supplier: new FormControl(),
             product_id: new FormControl(),
             purchase_date: new FormControl('', Validators.required),
             purchase_invoiceNo: new FormControl('', Validators.required),

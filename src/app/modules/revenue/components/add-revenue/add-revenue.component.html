@@ -1,172 +1,273 @@
 <form class="form-horizontal" [formGroup]="revenueForm">
-    <div class="row">
-        <div class="col-sm-6">
-        
-            <div class="form-group"><label for="income_paymentDate" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Date de paiement
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8">
-                    <div class="input-group date">
-                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                        <input type="date" [ngClass]="{ 'is-invalid': submitted && f.income_paymentDate.errors }"
-                            formControlName="income_paymentDate"
-                            name="income_paymentDate" id="income_paymentDate" placeholder="AAAA-MM-JJ"
-                            class="form-control">
-                    </div>
-                    <!---->
-                </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="income_paymentDate" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">
+              Date of Payment
+            </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+            <input
+              type="date"
+              [ngClass]="{
+                'is-invalid': submitted && f.income_paymentDate.errors
+              }"
+              formControlName="income_paymentDate"
+              name="income_paymentDate"
+              id="income_paymentDate"
+              placeholder="AAAA-MM-JJ"
+              class="form-control"
+            />
+          </div>
+          <!---->
+          <div
+            *ngIf="submitted && f.income_paymentDate.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.income_paymentDate.errors.required">
+              {{ msg.validations.income_paymentDate }}
             </div>
-
-            <div class="form-group"><label for="customer_id" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Nom du client
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><select id="customer_id" [ngClass]="{ 'is-invalid': submitted && f.customer_id.errors }"
-                        formControlName="customer_id" name="customer_id" class="form-control">
-                        <option value="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sélectionnez un client</font>
-                            </font>
-                        </option>
-                        
-                        <option value="55">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Awais Qurni</font>
-                            </font>
-                        </option>
-                    </select>
-                    <!---->
-                </div>
-            </div>
-
-            <div class="form-group"><label for="income_paymentType" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Type de paiement
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><select type="text" [ngClass]="{ 'is-invalid': submitted && f.income_paymentType.errors }"
-                        formControlName="income_paymentType" name="income_paymentType" id="income_paymentType"
-                        class="form-control">
-                        <option value="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sélectionner le genre</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">En espèces</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Vérifier</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Commande de paiement</font>
-                            </font>
-                        </option>
-                    </select>
-                    <!---->
-                </div>
-            </div>
-
-
-            <div class="form-group"><label for="income_paymentAccount" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Compte de paiement
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><select type="text" [ngClass]="{ 'is-invalid': submitted && f.income_paymentAccount.errors }"
-                        formControlName="income_paymentAccount" name="income_paymentAccount" id="income_paymentAccount"
-                        class="form-control">
-                        <option value="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sélectionnez un compte</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Utilitaire</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Un service</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Actuel</font>
-                            </font>
-                        </option>
-                    </select>
-                    <!---->
-                </div>
-            </div>
-
-
+          </div>
         </div>
-        <div class="col-sm-6">
-            <div class="form-group"><label for="income_amount" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Montant
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input type="number" min="0" max="10000000" step="any"
-                        [ngClass]="{ 'is-invalid': submitted && f.income_amount.errors }" formControlName="income_amount"
-                        name="income_amount"
-                        id="income_amount" placeholder="Montant" class="form-control">
-                    <!---->
-                </div>
+      </div>
+
+      <div class="form-group">
+        <label for="customer_id" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Name of client </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <select
+            id="customer_id"
+            [ngClass]="{ 'is-invalid': submitted && f.customer_id.errors }"
+            formControlName="customer_id"
+            name="customer_id"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+
+            <option value="0">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">John Doe</font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.customer_id.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.customer_id.errors.required">
+              {{ msg.validations.customer_id }}
             </div>
-
-
-            <div class="form-group"><label for="income_details" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Détails du revenu
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><textarea id="income_details" [ngClass]="{ 'is-invalid': submitted && f.income_details.errors }"
-                        formControlName="income_details" name="income_details" rows="5"
-                        placeholder="Entrer ..." class="form-control"></textarea></div>
-            </div>
-
-
+          </div>
         </div>
+      </div>
+
+      <div class="form-group">
+        <label for="income_paymentType" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Type de paiement </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <select
+            type="text"
+            [ngClass]="{
+              'is-invalid': submitted && f.income_paymentType.errors
+            }"
+            formControlName="income_paymentType"
+            name="income_paymentType"
+            id="income_paymentType"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Cash</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Credit Card</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Order of payment</font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.income_paymentType.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.income_paymentType.errors.required">
+              {{ msg.validations.income_paymentType }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="income_paymentAccount" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Account </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <select
+            type="text"
+            [ngClass]="{
+              'is-invalid': submitted && f.income_paymentAccount.errors
+            }"
+            formControlName="income_paymentAccount"
+            name="income_paymentAccount"
+            id="income_paymentAccount"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Utility</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Service</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Actual</font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.income_paymentAccount.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.income_paymentAccount.errors.required">
+              {{ msg.validations.income_paymentAccount }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group">
-                <button (click)="add()" type="button" class="btn btn-info">
-                    <i class="fas fa-save"></i>
-                    Sauvegarder
-                </button>
-                <button (click)="reset()" type="button" class="btn btn-danger">
-                    <i class="fas fa-times"></i>
-                    Annuler
-                </button>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="income_amount" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Amount </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            type="number"
+            min="0"
+            max="10000000"
+            step="any"
+            [ngClass]="{ 'is-invalid': submitted && f.income_amount.errors }"
+            formControlName="income_amount"
+            name="income_amount"
+            id="income_amount"
+            placeholder="Montant"
+            class="form-control"
+          />
+          <div
+            *ngIf="submitted && f.income_amount.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.income_amount.errors.required">
+              {{ msg.validations.income_amount }}
             </div>
+          </div>
+          <!---->
         </div>
-        <div class="col-sm-6"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="income_details" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Details </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <textarea
+            id="income_details"
+            [ngClass]="{ 'is-invalid': submitted && f.income_details.errors }"
+            formControlName="income_details"
+            name="income_details"
+            rows="5"
+            placeholder="Entrer ..."
+            class="form-control"
+          ></textarea>
+          <div
+            *ngIf="submitted && f.income_details.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.income_details.errors.required">
+              {{ msg.validations.income_details }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <button (click)="add()" type="button" class="btn btn-info">
+          <i class="fas fa-save"></i>
+          Save
+        </button>
+        <button (click)="reset()" type="button" class="btn btn-danger">
+          <i class="fas fa-times"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-6"></div>
+  </div>
 </form>

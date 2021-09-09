@@ -1,56 +1,89 @@
 <div class="card">
-    <div class="card-header">
-        <strong class="card-title">Paramètres</strong>
+  <div class="card-header">
+    <strong class="card-title">Settings</strong>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="cc-payment" class="control-label mb-1">Name </label>
+      <input
+        id="cc-payment"
+        name="cc-payment"
+        type="text"
+        class="form-control"
+        aria-required="true"
+        aria-invalid="false"
+        value="{{ company.APP_COMPANY_NAME }}"
+        disabled
+      />
     </div>
-    <div class="card-body">
 
-        <div class="form-group">
-            <label for="cc-payment" class="control-label mb-1">Nom entreprise</label>
-            <input id="cc-payment" name="cc-payment" type="text" class="form-control" aria-required="true"
-                aria-invalid="false" value="{{company.APP_COMPANY_NAME}}" />
-        </div>
-
-        <div class=" form-group">
-            <label for="cc-payment" class="control-label mb-1">Email entreprise</label>
-            <input id="cc-payment" name="cc-payment" type="text" class="form-control" aria-required="true"
-                aria-invalid="false" value="{{company.APP_COMPANY_EMAIL}}" />
-        </div>
-
-
-        <div class="form-group">
-            <label for="cc-payment" class="control-label mb-1">Adresse entreprise</label>
-            <input id="cc-payment" name="cc-payment" type="text" class="form-control" aria-required="true"
-                aria-invalid="false" value="{{company.APP_ADDRESS}}" />
-        </div>
-
-        <div class="row form-group">
-            <div class="col col-md-3"><label for="select" class=" form-control-label">Langue</label></div>
-            <div class="col-12 col-md-9">
-                <select name="select" id="select" class="form-control" value="{{user.USER_LANGUAGE}}">
-                    <option value="fr">Francais</option>
-                    <option value="en">English</option>
-
-                </select>
-            </div>
-        </div>
-
-        <div class="row form-group">
-            <div class="col col-md-3"><label for="select" class=" form-control-label">Devise</label></div>
-            <div class="col-12 col-md-9">
-                <select name="select" id="select" class="form-control" value="{{user.APP_CURRENCY}}">
-                    <option value="£">Euro</option>
-                    <option value="$">Dollar</option>
-
-                </select>
-            </div>
-        </div>
-
-        <button id="payment-button" type="submit" class="btn btn-info">
-            <i class="fa fa-save fa-lg"></i>&nbsp;
-            <span id="payment-button-amount">Enregister</span>
-
-        </button>
-
-
+    <div class="form-group">
+      <label for="cc-payment" class="control-label mb-1">Email </label>
+      <input
+        id="cc-payment"
+        name="cc-payment"
+        type="text"
+        class="form-control"
+        aria-required="true"
+        aria-invalid="false"
+        value="{{ company.APP_COMPANY_EMAIL }}"
+        disabled
+      />
     </div>
+
+    <div class="form-group">
+      <label for="cc-payment" class="control-label mb-1">Address </label>
+      <input
+        id="cc-payment"
+        name="cc-payment"
+        type="text"
+        class="form-control"
+        aria-required="true"
+        aria-invalid="false"
+        value="{{ company.APP_ADDRESS }}"
+        disabled
+      />
+    </div>
+
+    <div class="row form-group">
+      <div class="col col-md-3">
+        <label for="select" class="form-control-label">Language</label>
+      </div>
+      <div class="col-12 col-md-9">
+        <select
+          name="select"
+          id="select"
+          class="form-control"
+          value="{{ user.USER_LANGUAGE }}"
+          disabled
+        >
+          <option value="en">English</option>
+          <option value="fr">Francais</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row form-group">
+      <div class="col col-md-3">
+        <label for="select" class="form-control-label">Currency</label>
+      </div>
+      <div class="col-12 col-md-9">
+        <select
+          name="select"
+          id="select"
+          class="form-control"
+          value="{{ user.APP_CURRENCY }}"
+          disabled
+        >
+          <option value="£">Euro</option>
+          <option value="$">Dollar</option>
+        </select>
+      </div>
+    </div>
+
+    <!--<button disabled id="payment-button" type="submit" class="btn btn-info">
+      <i class="fa fa-save fa-lg"></i>&nbsp;
+      <span id="payment-button-amount">Save</span>
+    </button>-->
+  </div>
 </div>

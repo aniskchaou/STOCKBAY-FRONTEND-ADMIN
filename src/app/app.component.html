@@ -1,12 +1,27 @@
 <!-- Sidenav -->
-<nav *ngIf="!hasRoute('login')"
-  class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+<nav
+  *ngIf="!hasRoute('login')"
+  class="
+    sidenav
+    navbar navbar-vertical
+    fixed-left
+    navbar-expand-xs navbar-light
+    bg-white
+  "
+  id="sidenav-main"
+>
   <div class="scrollbar-inner">
     <!-- Brand -->
-    <div class="sidenav-header  align-items-center">
+    <div class="sidenav-header align-items-center">
       <a class="navbar-brand" href="javascript:void(0)">
-        <img width="70" height="70" src="assets/img/logo.png" style="max-height: 80px;" class="navbar-brand-img"
-          alt="...">
+        <img
+          width="70"
+          height="70"
+          src="assets/img/logo.png"
+          style="max-height: 80px"
+          class="navbar-brand-img"
+          alt="..."
+        />
       </a>
     </div>
     <div class="navbar-inner">
@@ -14,7 +29,6 @@
       <div class="collapse navbar-collapse" id="sidenav-collapse-main">
         <!-- Nav items -->
         <app-navigation></app-navigation>
-
       </div>
     </div>
   </div>
@@ -22,30 +36,49 @@
 <!-- Main content -->
 <div class="main-content" id="panel" *ngIf="!hasRoute('login')">
   <!-- Topnav -->
-  <nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+  <nav
+    class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom"
+  >
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Search form -->
-        <form class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main">
+        <form
+          class="navbar-search navbar-search-light form-inline mr-sm-3"
+          id="navbar-search-main"
+        >
           <div class="form-group mb-0">
             <div class="input-group input-group-alternative input-group-merge">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                <span class="input-group-text"
+                  ><i class="fas fa-search"></i
+                ></span>
               </div>
-              <input class="form-control" placeholder="Rechercher" type="text">
+              <input
+                class="form-control"
+                placeholder="Rechercher"
+                type="text"
+              />
             </div>
           </div>
-          <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main"
-            aria-label="Close">
+          <button
+            type="button"
+            class="close"
+            data-action="search-close"
+            data-target="#navbar-search-main"
+            aria-label="Close"
+          >
             <span aria-hidden="true">×</span>
           </button>
         </form>
         <!-- Navbar links -->
-        <ul class="navbar-nav align-items-center  ml-md-auto ">
+        <ul class="navbar-nav align-items-center ml-md-auto">
           <li class="nav-item d-xl-none">
             <!-- Sidenav toggler -->
-            <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin"
-              data-target="#sidenav-main">
+            <div
+              class="pr-3 sidenav-toggler sidenav-toggler-dark"
+              data-action="sidenav-pin"
+              data-target="#sidenav-main"
+            >
               <div class="sidenav-toggler-inner">
                 <i class="sidenav-toggler-line"></i>
                 <i class="sidenav-toggler-line"></i>
@@ -54,7 +87,12 @@
             </div>
           </li>
           <li class="nav-item d-sm-none">
-            <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
+            <a
+              class="nav-link"
+              href="#"
+              data-action="search-show"
+              data-target="#navbar-search-main"
+            >
               <i class="ni ni-zoom-split-in"></i>
             </a>
           </li>
@@ -129,39 +167,48 @@
             </div>
           </li>-->
         </ul>
-        <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+        <ul class="navbar-nav align-items-center ml-auto ml-md-0">
           <li class="nav-item dropdown">
-            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
+            <a
+              class="nav-link pr-0"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="assets/img/theme/team-4.jpg">
+                  <img
+                    alt="Image placeholder"
+                    src="assets/img/theme/team-4.jpg"
+                  />
                 </span>
-                <div class="media-body  ml-2  d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Admin</span>
+                <div class="media-body ml-2 d-none d-lg-block">
+                  <span class="mb-0 text-sm font-weight-bold">Admin</span>
                 </div>
               </div>
             </a>
-            <div class="dropdown-menu  dropdown-menu-right ">
+            <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Welcome!</h6>
               </div>
-              <a routerLink="/profile" class="dropdown-item">
+              <!-- <a routerLink="/profile" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
-                <span>Mon profile</span>
+                <span>My profile</span>
               </a>
               <a routerLink="/editprofile" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
-                <span>Editer mon profile</span>
-              </a>
+                <span>Edit my profile</span>
+              </a>-->
               <a routerLink="/configuration" class="dropdown-item">
                 <i class="ni ni-settings-gear-65"></i>
-                <span>Paramètres</span>
+                <span>Settings</span>
               </a>
               <div class="dropdown-divider"></div>
               <a routerLink="/" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
-                <span>Déconnexion</span>
+                <span>Log out</span>
               </a>
             </div>
           </li>
@@ -174,10 +221,7 @@
   <div class="header bg-primary pb-6">
     <div class="container-fluid">
       <div class="header-body">
-        <div class="row align-items-center py-4">
-
-
-        </div>
+        <div class="row align-items-center py-4"></div>
       </div>
     </div>
   </div>
@@ -194,24 +238,21 @@
     <footer class="footer pt-0">
       <div class="row align-items-center justify-content-lg-between">
         <div class="col-lg-6">
-          <div class="copyright text-center  text-lg-left  text-muted">
+          <div class="copyright text-center text-lg-left text-muted">
             Developed by <a href="https://github.com/aniskchaou">Anis KCHAOU</a>
           </div>
         </div>
         <div class="col-lg-6">
-          <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-
-          </ul>
+          <ul
+            class="nav nav-footer justify-content-center justify-content-lg-end"
+          ></ul>
         </div>
       </div>
     </footer>
   </div>
 </div>
 
-
-
-
-<br><br>
+<br /><br />
 
 <div *ngIf="hasRoute('login')">
   <div class="container mt--8 pb-5">
@@ -219,54 +260,75 @@
       <div class="col-lg-5 col-md-7">
         <div class="card bg-secondary border-0 mb-0">
           <div class="card-header bg-transparent pb-5">
-            <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
-            <br><br>
+            <div class="text-muted text-center mt-2 mb-3">
+              <small>Sign in with</small>
+            </div>
+            <br /><br />
             <div class="btn-wrapper text-center">
-              <img width="70" height="70" src="assets/img/logo.png" style="max-height: 80px;" class="navbar-brand-img"
-                alt="...">
+              <img
+                width="70"
+                height="70"
+                src="assets/img/logo.png"
+                style="max-height: 80px"
+                class="navbar-brand-img"
+                alt="..."
+              />
             </div>
           </div>
           <div class="card-body px-lg-5 py-lg-5">
-            <div class="text-center text-muted mb-4">
-
-            </div>
-
-            <div class="form-group mb-3">
-              <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+            <div class="text-center text-muted mb-4"></div>
+            <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">
+              <div class="form-group mb-3">
+                <div
+                  class="input-group input-group-merge input-group-alternative"
+                >
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="ni ni-email-83"></i
+                    ></span>
+                  </div>
+                  <input
+                    name="username"
+                    ngModel="{{ username }}"
+                    class="form-control"
+                    placeholder="Email"
+                    type="text"
+                    value="admin"
+                  />
                 </div>
-                <input class="form-control" placeholder="Email" type="text" value="admin@admin.com">
               </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group input-group-merge input-group-alternative">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+              <div class="form-group">
+                <div
+                  class="input-group input-group-merge input-group-alternative"
+                >
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="ni ni-lock-circle-open"></i
+                    ></span>
+                  </div>
+                  <input
+                    name="password"
+                    ngModel="{{ password }}"
+                    class="form-control"
+                    placeholder="Password"
+                    type="password"
+                    value="admin"
+                  />
                 </div>
-                <input class="form-control" placeholder="Password" type="password" value="adùin">
               </div>
-            </div>
 
-            <div class="text-center">
-              <button routerLink="/dashboard" type="submit" class="btn btn-primary my-4">Connexion</button>
-            </div>
-
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary my-4">
+                  Sign in
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
 
 <!-- Argon Scripts -->
 <!-- Core -->

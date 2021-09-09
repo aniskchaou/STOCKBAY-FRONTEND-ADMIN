@@ -1,64 +1,67 @@
 <div class="card">
   <!-- Card header -->
   <div class="card-header border-0">
-    <h3 class="mb-0">Achats</h3>
+    <h3 class="mb-0">Purchases</h3>
   </div>
   <!-- Light table -->
   <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
-          <th scope="col" class="sort" data-sort="budget">Fournisseur</th>
-          <th scope="col" class="sort" data-sort="status">Statut</th>
-          <th scope="col">Quantité</th>
-          <th scope="col" class="sort" data-sort="completion">Prix</th>
-          <th scope="col">Total</th>
+          <th scope="col" class="sort" data-sort="budget">Supplier</th>
+          <th scope="col" class="sort" data-sort="status">Status</th>
           <th scope="col">Date</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr *ngFor="let b of buys$">
-          <td scope="col" class="sort" data-sort="name">Hp</td>
-          <td scope="col" class="sort" data-sort="budget">{{b.supplier}}</td>
-          <td scope="col" class="sort" data-sort="status">{{b.purchase_status}}</td>
-          <td scope="col">5</td>
-          <td scope="col" class="sort" data-sort="completion">1287 $</td>
-          <td scope="col">22.000 $</td>
-          <td scope="col">{{b.purchase_date}}</td>
+          <td scope="col" class="sort" data-sort="budget">
+            {{ b.supplier.supplier_name }}
+          </td>
+          <td scope="col" class="sort" data-sort="status">
+            {{ b.purchase_status }}
+          </td>
+          <td scope="col">{{ b.purchase_date }}</td>
 
           <td>
-            <button type="button" data-toggle="modal" (click)="edit(b.id)" data-target="#editBuy"
-              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" (click)="delete(b.id)"><i
-                class="fas fa-trash-alt"></i></button>
+            <!-- <button
+              type="button"
+              data-toggle="modal"
+              (click)="edit(b.id)"
+              data-target="#editBuy"
+              class="btn btn-warning btn-sm"
+            >
+              <i class="fas fa-edit"></i>
+            </button>-->
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="delete(b.id)"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
-
-
       </tbody>
       <tfoot class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
-          <th scope="col" class="sort" data-sort="budget">Fournisseur</th>
-          <th scope="col" class="sort" data-sort="status">Statut</th>
-          <th scope="col">Quantité</th>
-          <th scope="col" class="sort" data-sort="completion">Prix</th>
-          <th scope="col">Total</th>
+          <th scope="col" class="sort" data-sort="budget">Supplier</th>
+          <th scope="col" class="sort" data-sort="status">Status</th>
           <th scope="col">Date</th>
           <th>Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button data-toggle="modal" data-target="#addBuy" type="button" class="btn btn-success btn-sm"><i
-        class="fas fa-plus-circle"></i> Ajouter</button>
+    <button
+      data-toggle="modal"
+      data-target="#addBuy"
+      type="button"
+      class="btn btn-success btn-sm"
+    >
+      <i class="fas fa-plus-circle"></i> Create
+    </button>
     <app-modal-buy></app-modal-buy>
-
-
-
-
   </div>
   <!-- Card footer -->
-
 </div>

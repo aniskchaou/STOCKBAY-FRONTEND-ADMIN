@@ -6,13 +6,16 @@ import { Injectable } from "@angular/core"
 export default class SellMessage {
 
     confirmations = {
-        'title': 'confirmation', 'add': 'vente a été ajouté avec succès',
+        'title': 'confirmation',
+         'add': 'Sale has been added',
         'edit': 'vente a été modifié avec succès',
-        'delete': 'vente a été supprimé avec succès'
+        'delete': 'Sale has been removed'
     }
     validations = {
-        'purchase_invoiceNo': 'facture No doit etre definie.',
-        'date_buy': 'date achat doit etre definie.'
+       "customer_id": "Customer is required",
+        "sale_date": "Date is required",
+        "sale_status": "Status is required",
+        "sale_invoiceNo": "Invoice No is required"
     }
 
     constructor() {

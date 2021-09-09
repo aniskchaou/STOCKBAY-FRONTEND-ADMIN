@@ -8,51 +8,72 @@
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
+          <th scope="col" class="sort" data-sort="name">Name</th>
           <th scope="col" class="sort" data-sort="budget">Email</th>
-          <th scope="col" class="sort" data-sort="status">Téléphone</th>
-          <th scope="col">Adresse</th>
-          <th scope="col" class="sort" data-sort="completion">Statut</th>
+          <th scope="col" class="sort" data-sort="status">Phone</th>
+          <th scope="col">Address</th>
+          <th scope="col" class="sort" data-sort="completion">Status</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr *ngFor="let c of clients$">
-          <td scope="col" class="sort" data-sort="name">{{c.customer_name}} </td>
-          <td scope="col" class="sort" data-sort="budget">{{c.customer_email}}
+          <td scope="col" class="sort" data-sort="name">
+            {{ c.customer_name }}
           </td>
-          <td scope="col" class="sort" data-sort="status">{{c.customer_phone}}</td>
-          <td scope="col">{{c.customer_address}}
-          <td scope="col" class="sort" data-sort="completion"><span class="badge bg-success">{{c.status_id}}</span></td>
+          <td scope="col" class="sort" data-sort="budget">
+            {{ c.customer_email }}
+          </td>
+          <td scope="col" class="sort" data-sort="status">
+            {{ c.customer_phone }}
+          </td>
+          <td scope="col">{{ c.customer_address }}</td>
+          <td scope="col" class="sort" data-sort="completion">
+            <span class="badge bg-success">{{ c.status_id }}</span>
+          </td>
 
           <td>
-            <button (click)="edit(c.id)" type="button" data-toggle="modal" data-target="#editClient"
-              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" (click)="delete(c.id)"><i
-                class="fas fa-trash-alt"></i></button>
+            <!--
+            <button
+              (click)="edit(c.id)"
+              type="button"
+              data-toggle="modal"
+              data-target="#editClient"
+              class="btn btn-warning btn-sm"
+            >
+              <i class="fas fa-edit"></i>
+            </button>-->
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="delete(c.id)"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
-
-
       </tbody>
       <tfoot class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
+          <th scope="col" class="sort" data-sort="name">Name</th>
           <th scope="col" class="sort" data-sort="budget">Email</th>
-          <th scope="col" class="sort" data-sort="status">Téléphone</th>
-          <th scope="col">Adresse</th>
-          <th scope="col" class="sort" data-sort="completion">Statut</th>
+          <th scope="col" class="sort" data-sort="status">Phone</th>
+          <th scope="col">Address</th>
+          <th scope="col" class="sort" data-sort="completion">Status</th>
           <th scope="col">Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button type="button" data-toggle="modal" data-target="#addClient" class="btn btn-success btn-sm"><i
-        class="fas fa-plus-circle"></i> Ajouter</button>
+    <button
+      type="button"
+      data-toggle="modal"
+      data-target="#addClient"
+      class="btn btn-success btn-sm"
+    >
+      <i class="fas fa-plus-circle"></i> Create
+    </button>
 
     <app-modal-client></app-modal-client>
-
-
   </div>
   <!-- Card footer -->
-
 </div>

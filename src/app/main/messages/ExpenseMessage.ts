@@ -6,13 +6,19 @@ import { Injectable } from "@angular/core"
 export default class ExpenseMessage {
 
     confirmations = {
-        'title': 'confirmation', 'add': 'dépense a été ajouté avec succès',
+        'title': 'confirmation', 
+        'add': 'Expense has been added',
         'edit': 'dépense a été modifié avec succès',
-        'delete': 'dépense a été supprimé avec succès'
+        'delete': 'Expense has been removed'
     }
     validations = {
-        'purchase_invoiceNo': 'facture No doit etre definie.',
-        'date_buy': 'date achat doit etre definie.'
+        id: 1,
+        "expense_paymentDate": "Payment Date is required",
+        "supplier_id": "Supplier is required",
+        "expense_paymentType": "Payment type is required",
+        "expense_paymentAccount": "Payment account is required",
+        "expense_amount": "Amount is required",
+        "expense_details": ""
     }
 
     constructor() {

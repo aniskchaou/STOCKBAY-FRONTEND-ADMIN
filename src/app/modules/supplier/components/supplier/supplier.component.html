@@ -1,56 +1,70 @@
 <div class="card">
   <!-- Card header -->
   <div class="card-header border-0">
-    <h3 class="mb-0">Fournisseurs</h3>
+    <h3 class="mb-0">Suppliers</h3>
   </div>
   <!-- Light table -->
   <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
+          <th scope="col" class="sort" data-sort="name">Name</th>
           <th scope="col" class="sort" data-sort="budget">Email</th>
-          <th scope="col" class="sort" data-sort="status">Téléphone</th>
-          <th scope="col">Adresse</th>
-          <th scope="col" class="sort" data-sort="completion">Statut</th>
+          <th scope="col" class="sort" data-sort="status">Phone</th>
+          <th scope="col">Address</th>
+          <th scope="col" class="sort" data-sort="completion">Status</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr *ngFor="let s of suppliers$">
-          <td scope="col" class="sort" data-sort="name">{{s.supplier_name}}</td>
-          <td scope="col" class="sort" data-sort="budget">{{s.supplier_email}}</td>
-          <td scope="col" class="sort" data-sort="status">{{s.supplier_phone}}</td>
-          <td scope="col">{{s.supplier_address}}</td>
-          <td scope="col" class="sort" data-sort="completion"><span class="badge bg-success">Active</span></td>
+          <td scope="col" class="sort" data-sort="name">
+            {{ s.supplier_name }}
+          </td>
+          <td scope="col" class="sort" data-sort="budget">
+            {{ s.supplier_email }}
+          </td>
+          <td scope="col" class="sort" data-sort="status">
+            {{ s.supplier_phone }}
+          </td>
+          <td scope="col">{{ s.supplier_address }}</td>
+          <td scope="col" class="sort" data-sort="completion">
+            <span class="badge bg-success">Active</span>
+          </td>
           <td>
-            <button (click)="edit(s.id)" type="button" data-toggle="modal" data-target="#editSupplier"
-              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" (click)="delete(s.id)"><i
-                class="fas fa-trash-alt"></i></button>
+            <!--<button (click)="edit(s.id)" type="button" data-toggle="modal" data-target="#editSupplier"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>-->
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="delete(s.id)"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
-
-
       </tbody>
       <tfoot class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
+          <th scope="col" class="sort" data-sort="name">Name</th>
           <th scope="col" class="sort" data-sort="budget">Email</th>
-          <th scope="col" class="sort" data-sort="status">Téléphone</th>
-          <th scope="col">Adresse</th>
-          <th scope="col" class="sort" data-sort="completion">Statut</th>
+          <th scope="col" class="sort" data-sort="status">Phone</th>
+          <th scope="col">Address</th>
+          <th scope="col" class="sort" data-sort="completion">Status</th>
           <th scope="col">Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button type="button" data-toggle="modal" data-target="#addSupplier" class="btn btn-success btn-sm"><i
-        class="fas fa-plus-circle"></i> Ajouter</button>
+    <button
+      type="button"
+      data-toggle="modal"
+      data-target="#addSupplier"
+      class="btn btn-success btn-sm"
+    >
+      <i class="fas fa-plus-circle"></i> Create
+    </button>
 
     <app-modal-supplier></app-modal-supplier>
-
-
   </div>
   <!-- Card footer -->
-
 </div>

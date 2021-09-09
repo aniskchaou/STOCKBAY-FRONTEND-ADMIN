@@ -3,34 +3,43 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import Service from '../interfaces/Service';
 import URLS from '../urls/urls';
+import Buy from '../models/Buy';
+import { BehaviorSubject } from 'rxjs';
+import Product from '../models/Product';
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class HTTPService implements Service {
+export class HTTPService  {
+
+    
 
     headers = { 'content-type': 'application/json' }
     model = ''
     constructor(private http: HttpClient) {
     }
-    update(old: any, data: any) {
-        throw new Error('Method not implemented.');
+    async update(url,data) {
+        await this.http.put(url,data)
     }
-    getAll() {
-        return this.http.get(URLS.URL_BASE + this.model + "/all");
+    getAll(url:string) {
+        const header=new HttpHeaders({ Authorization: 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password')) });
+        return this.http.get(url,{headers:header});
     }
-    get(id: any) {
-        return this.http.get(URLS.URL_BASE + this.model + "/" + id);
+    get(id: string) {
+        return this.http.get(id);
     }
-    async create(data) {
+    async create(url,data) {
+
         const body = JSON.stringify(data);
-        await this.http.post(URLS.URL_BASE + this.model + "/create", body,
-            { 'headers': this.headers }).toPromise();
+        const headers = new HttpHeaders({ 'content-type': 'application/json',Authorization: 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password')) } )
+        await this.http.post(url, body,
+            { 'headers': headers }).toPromise();
     }
-    async remove(id: any) {
-        await this.http.delete(URLS.URL_BASE + this.model + "/delete/" + id, {
-            headers: new HttpHeaders(this.headers)
+    async remove(url) {
+         const headers = new HttpHeaders({ 'content-type': 'application/json',Authorization: 'Basic ' + btoa(sessionStorage.getItem('username') + ':' + sessionStorage.getItem('password')) } )
+        await this.http.delete(url, {
+            headers: headers
         }).toPromise();
     }
 

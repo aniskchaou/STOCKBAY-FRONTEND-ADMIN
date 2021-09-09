@@ -1,224 +1,321 @@
-<form class="form-horizontal" name="myForm" #myForm="ngForm" [formGroup]="buyForm">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group"><label for="supplier_id" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Nom du fournisseur
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8">
-
-                    <select [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }" formControlName="supplier" id="supplier_id"
-                        name="supplier" class="form-control">
-                        <option value="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sélectionnez un fournisseur</font>
-                            </font>
-                        </option>
-                        <option value="51">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Chandra</font>
-                            </font>
-                        </option>
-                    </select>
-                    <!---->
-                    <div *ngIf="submitted && f.supplier.errors" class="alert alert-danger">
-                        <div *ngIf="submitted && f.supplier.errors.required">
-                            {{msg.validationMessage.supplier}}</div>
-                    </div>
-                </div>
+<form
+  class="form-horizontal"
+  name="myForm"
+  #myForm="ngForm"
+  [formGroup]="buyForm"
+>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="supplier" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">
+              Name of supplier
+            </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <select
+            [ngClass]="{ 'is-invalid': submitted && f.supplier_id.errors }"
+            formControlName="supplier"
+            id="supplier"
+            name="supplier"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select the supplier</font>
+              </font>
+            </option>
+            <option value="1">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit"> Alpha </font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.supplier_id.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.supplier_id.errors.required">
+              {{ msg.validationMessage.supplier_id }}
             </div>
-
-
-            <div class="form-group"><label for="purchase_date" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Date
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8">
-                    <div class="input-group date">
-                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-
-                        <input type="date" formControlName="purchase_date" name="purchase_date" id="purchase_date" placeholder="AAAA-MM-JJ"
-                            class="form-control datepicker pull-right" [ngClass]="{ 'is-invalid': submitted && f.purchase_date.errors }">
-                        
-                        
-                        <div *ngIf="submitted && f.purchase_date.errors" class="alert alert-danger">
-                            <div *ngIf="submitted && f.purchase_date.errors.required">
-                                {{msg.validationMessage.purchase_date}}</div>
-                        </div>
-
-                    </div>
-                    <!---->
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="col-sm-6">
-            <div class="form-group"><label for="purchase_status" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Statut
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk require text-danger" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8">
+      </div>
 
-                    <select [ngClass]="{ 'is-invalid': submitted && f.purchase_status.errors }" formControlName="purchase_status"
-                        name="purchase_status" id="purchase_status" class="form-control">
-                        <option value="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sélectionner</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Reçu</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">En attente</font>
-                            </font>
-                        </option>
-                        <option>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Commandé</font>
-                            </font>
-                        </option>
-                    </select>
-                    <!---->
-                    <div *ngIf="submitted && f.purchase_status.errors" class="alert alert-danger">
-                        <div *ngIf="submitted && f.purchase_status.errors.required">
-                            {{msg.validationMessage.purchase_status}}</div>
-                    </div>
-                </div>
+      <div class="form-group">
+        <label for="purchase_date" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Date </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <div class="input-group date">
+            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+
+            <input
+              type="date"
+              formControlName="purchase_date"
+              name="purchase_date"
+              id="purchase_date"
+              placeholder="AAAA-MM-JJ"
+              class="form-control datepicker pull-right"
+              [ngClass]="{ 'is-invalid': submitted && f.purchase_date.errors }"
+            />
+
+            <div
+              *ngIf="submitted && f.purchase_date.errors"
+              class="alert alert-danger"
+            >
+              <br />
+              <div *ngIf="submitted && f.purchase_date.errors.required">
+                {{ msg.validationMessage.purchase_date }}
+              </div>
             </div>
-            <div class="form-group"><label for="purchase_invoiceNo" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            No de facture
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8">
-
-                    <input type="text" formControlName="purchase_invoiceNo" name="purchase_invoiceNo" id="purchase_invoiceNo"
-                        placeholder="No de facture" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.purchase_invoiceNo.errors }">
-
-                    <div *ngIf="submitted && f.purchase_invoiceNo.errors" class="alert alert-danger">
-                        <div *ngIf="submitted && f.purchase_invoiceNo.errors.required">
-                            {{msg.validationMessage.purchase_invoiceNo}}
-                        </div>
-                    </div>
-                    <!---->
-                </div>
-            </div>
+          </div>
+          <!---->
         </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-sm-1"><button class="btn btn-secondary" style="margin-top: 48px;"><i aria-hidden="true"
-                    class="fa fa-plus"></i></button></div>
-        <div class="col-sm-11">
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th style="width: 30%;">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Produit</font>
-                            </font>
-                        </th>
-                        <th style="width: 25%;">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Prix</font>
-                            </font>
-                        </th>
-                        <th style="width: 20%;">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Quantité </font>
-                            </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                                class="fa fa-asterisk require text-danger" data-original-title="Required"></i>
-                        </th>
-                        <th style="width: 20%;">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Total</font>
-                            </font>
-                        </th>
-                        <th style="width: 5%;"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-
-                            <select formControlName="product_id" name="product_id" id="product_id" class="form-control">
-                                <option value="">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Sélectionner un produit</font>
-                                    </font>
-                                </option>
-                                <option value="86">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">iphone 11pro max</font>
-                                    </font>
-                                </option>
-                                <option value="87">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">ddr3</font>
-                                    </font>
-                                </option>
-                                <option value="88">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Livre</font>
-                                    </font>
-                                </option>
-                            </select>
-                            </td>
-                        <td><input disabled="disabled" type="number" step="any" name="product_supplierPrice"
-                                id="product_supplierPrice" placeholder="Prix" class="form-control"></td>
-                        <td><input type="number" min="0" name="purchase_quantity" id="purchase_quantity"
-                                placeholder="Quantité" class="form-control"></td>
-                        <td><input type="number" step="any" name="purchase_total" id="purchase_total"
-                                placeholder="Prix ​​total" class="form-control"></td>
-                        <td><button class="btn btn-secondary btn-block"><i aria-hidden="true"
-                                    class="fa fa-minus"></i></button></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="3" class="text-right"><strong>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">somme finale</font>
-                                </font>
-                            </strong></td>
-                        <td colspan="2" class="text-right"><strong><input type="number" step="any" name="grand_total"
-                                    placeholder="somme finale" class="form-control"></strong></td>
-                        <td></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group">
-            <button (click)="add()" type="button" class="btn btn-info">
-                <i class="fas fa-save"></i>
-                Sauvegarder
-            </button>
-            <button (click)="reset()" type="button" class="btn btn-danger">
-                <i class="fas fa-times"></i>
-                Annuler
-            </button>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="purchase_status" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Status </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk require text-danger"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <select
+            [ngClass]="{ 'is-invalid': submitted && f.purchase_status.errors }"
+            formControlName="purchase_status"
+            name="purchase_status"
+            id="purchase_status"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Received</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Pending</font>
+              </font>
+            </option>
+            <option>
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Ordered</font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.purchase_status.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.purchase_status.errors.required">
+              {{ msg.validationMessage.purchase_status }}
             </div>
+          </div>
         </div>
-        <div class="col-sm-6"></div>
+      </div>
+      <div class="form-group">
+        <label for="purchase_invoiceNo" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Invoice number </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <input
+            type="text"
+            formControlName="purchase_invoiceNo"
+            name="purchase_invoiceNo"
+            id="purchase_invoiceNo"
+            placeholder="No de facture"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid': submitted && f.purchase_invoiceNo.errors
+            }"
+          />
+
+          <div
+            *ngIf="submitted && f.purchase_invoiceNo.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.purchase_invoiceNo.errors.required">
+              {{ msg.validationMessage.purchase_invoiceNo }}
+            </div>
+          </div>
+          <!---->
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1">
+      <button class="btn btn-secondary" style="margin-top: 48px">
+        <i aria-hidden="true" class="fa fa-plus"></i>
+      </button>
+    </div>
+    <div class="col-sm-11">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th style="width: 30%">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Product</font>
+              </font>
+            </th>
+            <th style="width: 25%">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Price</font>
+              </font>
+            </th>
+            <th style="width: 20%">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Quantity </font> </font
+              ><i
+                aria-hidden="true"
+                data-toggle="tooltip"
+                data-placement="top"
+                title=""
+                class="fa fa-asterisk require text-danger"
+                data-original-title="Required"
+              ></i>
+            </th>
+            <th style="width: 20%">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Total</font>
+              </font>
+            </th>
+            <th style="width: 5%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select
+                formControlName="product_id"
+                name="product_id"
+                id="product_id"
+                class="form-control"
+              >
+                <option value="">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit">Select</font>
+                  </font>
+                </option>
+                <option value="0">
+                  <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit">Iphone 6</font>
+                  </font>
+                </option>
+              </select>
+            </td>
+            <td>
+              <input
+                disabled="disabled"
+                type="number"
+                step="any"
+                name="product_supplierPrice"
+                id="product_supplierPrice"
+                placeholder="Prix"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                min="0"
+                name="purchase_quantity"
+                id="purchase_quantity"
+                placeholder="Quantité"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                step="any"
+                name="purchase_total"
+                id="purchase_total"
+                placeholder="Prix ​​total"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <button class="btn btn-secondary btn-block">
+                <i aria-hidden="true" class="fa fa-minus"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="text-right">
+              <strong>
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit">Sum</font>
+                </font>
+              </strong>
+            </td>
+            <td colspan="2" class="text-right">
+              <strong
+                ><input
+                  type="number"
+                  step="any"
+                  name="grand_total"
+                  placeholder="somme finale"
+                  class="form-control"
+              /></strong>
+            </td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <button (click)="add()" type="button" class="btn btn-info">
+          <i class="fas fa-save"></i>
+          Save
+        </button>
+        <button (click)="reset()" type="button" class="btn btn-danger">
+          <i class="fas fa-times"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-6"></div>
+  </div>
 </form>

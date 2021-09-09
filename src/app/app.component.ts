@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { URLLoader } from './main/configs/URLLoader';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent extends URLLoader {
+
+   username = 'admin'
+  password = 'admin'
+
   private myScripts = [
     "../assets/vendors/jquery/dist/jquery.min.js",
     "../assets/vendors/popper.js/dist/umd/popper.min.js",
@@ -26,7 +32,7 @@ export class AppComponent {
     "../assets/vendors/datatables.net-buttons/js/buttons.colVis.min.js",
     "../assets/js/init-scripts/data-table/datatables-init.js"
   ];
-  private loadScripts() {
+   loadScripts() {
     let container = document.getElementsByTagName('body')[0];
     let promise = Promise.resolve();
     for (let url of this.myScripts) {
@@ -52,10 +58,24 @@ export class AppComponent {
   public router: string;
 
   constructor(private _router: Router) {
+    super()
   }
 
 
   hasRoute(route: string) {
     return this._router.url.includes(route);
+  }
+
+
+   doLogin(loginform:NgForm) {
+      
+    if(loginform.value.username=='admin'&& loginform.value.password=='admin')
+    {
+        this._router.navigate(['/dashboard']) 
+    }else
+    {
+      super.show('Error','You have entered an invalid username or password','error')
+    }
+
   }
 }

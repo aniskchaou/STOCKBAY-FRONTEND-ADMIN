@@ -13,15 +13,15 @@ export default class EmployeeValidation extends Validation {
     createFormGroup() {
         return new FormGroup({
 
-            employee_fname: new FormControl('', Validators.required),
-            employee_email: new FormControl('', Validators.required),
-            employee_phone: new FormControl('', Validators.required),
-            employee_gender: new FormControl('', Validators.required),
-            employee_nid: new FormControl('', Validators.required),
+            name: new FormControl('', Validators.required),
+            email: new FormControl('', Validators.required),
+            phone: new FormControl('', Validators.required),
+            gender: new FormControl('', Validators.required),
+            nid: new FormControl('', Validators.required),
             status_id: new FormControl('', Validators.required),
-            employee_birthday: new FormControl('', Validators.required),
-            employee_address: new FormControl('', Validators.required),
-            employee_salary: new FormControl('', Validators.required),
+            birthday: new FormControl('', Validators.required),
+            address: new FormControl('', Validators.required),
+            salary: new FormControl('', Validators.required),
 
         })
     }

@@ -1,55 +1,70 @@
 <div class="card">
   <!-- Card header -->
   <div class="card-header border-0">
-    <h3 class="mb-0">Produits</h3>
+    <h3 class="mb-0">Products</h3>
   </div>
   <!-- Light table -->
   <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
-          <th scope="col" class="sort" data-sort="budget">Categorie</th>
-          <th scope="col" class="sort" data-sort="status">Fournisseur</th>
-          <th scope="col">Prix</th>
-          <th scope="col" class="sort" data-sort="completion">Quantité</th>
+          <th scope="col" class="sort" data-sort="name">Name</th>
+          <th scope="col" class="sort" data-sort="budget">Category</th>
+          <th scope="col" class="sort" data-sort="status">Supplier</th>
+          <th scope="col">Price</th>
+          <th scope="col" class="sort" data-sort="completion">Quantity</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr *ngFor="let p of products$">
-          <td scope="col" class="sort" data-sort="name">{{p.product_name}}</td>
-          <td scope="col" class="sort" data-sort="budget">{{p.category_id}}</td>
-          <td scope="col" class="sort" data-sort="status">{{p.supplier_id}}</td>
-          <td scope="col">{{p.product_sellPrice}} $</td>
-          <td scope="col" class="sort" data-sort="completion">{{p.product_alertquantity}}</td>
+          <td scope="col" class="sort" data-sort="name">
+            {{ p.product_name }}
+          </td>
+          <td scope="col" class="sort" data-sort="budget">
+            {{ p.category_id.category_name }}
+          </td>
+          <td scope="col" class="sort" data-sort="status">
+            {{ p.supplier_id.supplier_name }}
+          </td>
+          <td scope="col">{{ p.product_sellPrice }} $</td>
+          <td scope="col" class="sort" data-sort="completion">
+            {{ p.product_alertquantity }}
+          </td>
           <td>
-            <button type="button" (click)="edit(p.id)" data-toggle="modal" data-target="#editProduct"
-              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" (click)="delete(p.id)"><i
-                class="fas fa-trash-alt"></i></button>
+            <!-- <button type="button" (click)="edit(p.id)" data-toggle="modal" data-target="#editProduct"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>-->
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="delete(p.id)"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
-
-
       </tbody>
       <tfoot class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
-          <th scope="col" class="sort" data-sort="budget">Categorie</th>
-          <th scope="col" class="sort" data-sort="status">Fournisseur</th>
-          <th scope="col">Prix</th>
-          <th scope="col" class="sort" data-sort="completion">Quantité</th>
+          <th scope="col" class="sort" data-sort="name">Name</th>
+          <th scope="col" class="sort" data-sort="budget">Category</th>
+          <th scope="col" class="sort" data-sort="status">Supplier</th>
+          <th scope="col">Price</th>
+          <th scope="col" class="sort" data-sort="completion">Quantity</th>
           <th scope="col">Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button data-toggle="modal" data-target="#addProduct" type="button" class="btn btn-success btn-sm"><i
-        class="fas fa-plus-circle"></i> Ajouter</button>
+    <button
+      data-toggle="modal"
+      data-target="#addProduct"
+      type="button"
+      class="btn btn-success btn-sm"
+    >
+      <i class="fas fa-plus-circle"></i> Create
+    </button>
 
     <app-modal-product></app-modal-product>
-
   </div>
   <!-- Card footer -->
-
 </div>

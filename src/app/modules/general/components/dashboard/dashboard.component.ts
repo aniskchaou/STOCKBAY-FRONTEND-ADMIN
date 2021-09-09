@@ -59,7 +59,7 @@ ngOnInit(): void {
   var ctx2 = document.getElementsByClassName("product-chart");
   this.renderChart(data, labels,ctx1,'rgba(204, 0, 0, 1)');
   this.renderChart(data2, labels, ctx2, 'rgba(24, 0, 204, 1)');
-  super.show('StockBay', 'Cette application est en cours de développement.', 'info')
+  //super.show('StockBay', 'Cette application est en cours de développement.', 'info')
 }
 
 

@@ -1,57 +1,72 @@
 <div class="card">
   <!-- Card header -->
   <div class="card-header border-0">
-    <h3 class="mb-0">Revenus</h3>
+    <h3 class="mb-0">Incomes</h3>
   </div>
   <!-- Light table -->
   <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Date paiement</th>
+          <th scope="col" class="sort" data-sort="name">Date of payment</th>
           <th scope="col" class="sort" data-sort="budget">Source</th>
           <th scope="col" class="sort" data-sort="status">Type</th>
-          <th scope="col">Compte</th>
-          <th scope="col" class="sort" data-sort="completion">Montant</th>
+          <th scope="col">Account</th>
+          <th scope="col" class="sort" data-sort="completion">Amount</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr *ngFor="let r of revenues$">
-          <th scope="col" class="sort" data-sort="name">{{r.income_paymentDate}}</th>
-          <th scope="col" class="sort" data-sort="budget">{{r.customer_id}}</th>
-          <th scope="col" class="sort" data-sort="status">{{r.income_paymentType}}</th>
-          <th scope="col">{{r.income_paymentAccount}}</th>
-          <th scope="col" class="sort" data-sort="completion">{{r.income_amount}} $</th>
+          <td scope="col" class="sort" data-sort="name">
+            {{ r.income_paymentDate }}
+          </td>
+          <td scope="col" class="sort" data-sort="budget">
+            {{ r.customer_id.customer_name }}
+          </td>
+          <td scope="col" class="sort" data-sort="status">
+            {{ r.income_paymentType }}
+          </td>
+          <td scope="col">{{ r.income_paymentAccount }}</td>
+          <td scope="col" class="sort" data-sort="completion">
+            {{ r.income_amount }} $
+          </td>
 
           <td>
-            <button (click)="edit(r.id)" type="button" data-toggle="modal" data-target="#editRevenue"
-              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button (click)="delete(r.id)" type="button" class="btn btn-danger btn-sm" onClick={deleteTask}><i
-                class="fas fa-trash-alt"></i></button>
+            <!--<button (click)="edit(r.id)" type="button" data-toggle="modal" data-target="#editRevenue"
+              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>-->
+            <button
+              (click)="delete(r.id)"
+              type="button"
+              class="btn btn-danger btn-sm"
+              onClick="{deleteTask}"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
-
-
-
       </tbody>
       <tfoot class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Date paiement</th>
+          <th scope="col" class="sort" data-sort="name">Date of payment</th>
           <th scope="col" class="sort" data-sort="budget">Source</th>
           <th scope="col" class="sort" data-sort="status">Type</th>
-          <th scope="col">Compte</th>
-          <th scope="col" class="sort" data-sort="completion">Montant</th>
+          <th scope="col">Account</th>
+          <th scope="col" class="sort" data-sort="completion">Amount</th>
           <th scope="col">Actions</th>
         </tr>
       </tfoot>
     </table>
-    <button type="button" data-toggle="modal" data-target="#addRevenue" class="btn btn-success btn-sm"><i
-        class="fas fa-plus-circle"></i> Ajouter</button>
+    <button
+      type="button"
+      data-toggle="modal"
+      data-target="#addRevenue"
+      class="btn btn-success btn-sm"
+    >
+      <i class="fas fa-plus-circle"></i> Create
+    </button>
 
     <app-modal-revenue></app-modal-revenue>
-
   </div>
   <!-- Card footer -->
-
 </div>

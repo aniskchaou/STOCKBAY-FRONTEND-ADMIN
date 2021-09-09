@@ -1,244 +1,461 @@
-<form method="POST" enctype="multipart/form-data" [formGroup]="productForm" class="form-horizontal">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group"><label for="product_name" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Nom du produit
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input [ngClass]="{ 'is-invalid': submitted && f.product_name.errors }"
-                        formControlName="product_name" type="text" name="product_name" id="product_name"
-                        placeholder="Nom du produit" class="form-control">
-                    <!---->
-                </div>
+<form
+  method="POST"
+  enctype="multipart/form-data"
+  [formGroup]="productForm"
+  class="form-horizontal"
+>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="product_name" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">
+              Name of product
+            </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            [ngClass]="{ 'is-invalid': submitted && f.product_name.errors }"
+            formControlName="product_name"
+            type="text"
+            name="product_name"
+            id="product_name"
+            placeholder="Nom du produit"
+            class="form-control"
+          />
+          <div
+            *ngIf="submitted && f.product_name.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.product_name.errors.required">
+              {{ msg.validations.product_name }}
             </div>
-            <div class="form-group"><label for="category_id" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Nom de catégorie
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><select [ngClass]="{ 'is-invalid': submitted && f.category_id.errors }"
-                        formControlName="category_id" type="text" id="category_id" name="category_id"
-                        class="form-control category_id">
-                        <option value="0" selected="selected">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Choisir une catégorie</font>
-                            </font>
-                        </option>
-                        <option value="71">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">12</font>
-                            </font>
-                        </option>
-                        <option value="72">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">dssdsdsd</font>
-                            </font>
-                        </option>
-                    
-                    </select>
-                    <!---->
-                </div>
-            </div>
-            <!---->
-            <div class="form-group"><label for="supplier_id" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Nom du fournisseur
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><select [ngClass]="{ 'is-invalid': submitted && f.supplier_id.errors }"
-                        formControlName="supplier_id" name="supplier_id" id="supplier_id" class="form-control">
-                        <option value="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sélectionnez un fournisseur</font>
-                            </font>
-                        </option>
-                        <option value="51">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Chandra</font>
-                            </font>
-                        </option>
-                        <option value="52">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Gulabi Goat Farm Islamabad</font>
-                            </font>
-                        </option>
-                        <option value="54">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">sg</font>
-                            </font>
-                        </option>
-                    </select>
-                    <!---->
-                </div>
-            </div>
-            <div class="form-group"><label for="product_unit" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Unité de produit
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input [ngClass]="{ 'is-invalid': submitted && f.product_unit.errors }"
-                        formControlName="product_unit" type="number" name="product_unit" id="product_unit"
-                        placeholder="Unité de produit" class="form-control">
-                    <!---->
-                </div>
-            </div>
-            <div class="form-group"><label for="product_alertquantity" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Quantité d'alerte
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input [ngClass]="{ 'is-invalid': submitted && f.product_alertquantity.errors }"
-                        formControlName="product_alertquantity" type="number" name="product_alertquantity" id="product_alertquantity"
-                        placeholder="Alerte produit" class="form-control">
-                    <!---->
-                </div>
-            </div>
-            <div class="form-group"><label for="product_supplierPrice" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Coût du produit
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input [ngClass]="{ 'is-invalid': submitted && f.product_supplierPrice.errors }"
-                        formControlName="product_supplierPrice" type="number" min="0" max="10000000" step="any"
-                        name="product_supplierPrice" id="product_supplierPrice" placeholder="Prix ​​de revient"
-                        class="form-control">
-                    <!---->
-                </div>
-            </div>
-            <div class="form-group"><label for="product_image" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Image du produit
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8">
-                    <div><input type="file" accept="image/*" name="product_image"></div>
-                    <!---->
-                </div>
-            </div>
+          </div>
+          <!---->
         </div>
-        <div class="col-sm-6">
-            <div class="form-group"><label for="product_sellPrice" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Prix ​​du produit
-                        </font>
-                    </font><i aria-hidden="true" data-toggle="tooltip" data-placement="top" title=""
-                        class="fa fa-asterisk text-danger require" data-original-title="Required"></i>
-                </label>
-                <div class="col-sm-8"><input [ngClass]="{ 'is-invalid': submitted && f.product_sellPrice.errors }"
-                        formControlName="product_sellPrice" type="number" min="0" max="10000000" step="any" name="product_sellPrice"
-                        id="product_sellPrice" placeholder="Prix ​​de vente" class="form-control">
-                    <!---->
-                </div>
+      </div>
+      <div class="form-group">
+        <label for="category_id" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Category </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <select
+            [ngClass]="{ 'is-invalid': submitted && f.category_id.errors }"
+            formControlName="category_id"
+            type="text"
+            id="category_id"
+            name="category_id"
+            class="form-control category_id"
+          >
+            <option value="0" selected="selected">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option value="0">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Electronic</font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.category_id.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.category_id.errors.required">
+              {{ msg.validations.category_id }}
             </div>
-            <div class="form-group"><label for="product_code" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Code
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><input [ngClass]="{ 'is-invalid': submitted && f.product_code.errors }"
-                        formControlName="product_code" type="text" name="product_code" id="product_code"
-                        placeholder="Code produit" class="form-control"></div>
-                <!---->
-            </div>
-            <div class="form-group"><label for="product_tax" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Taux d'imposition
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><input [ngClass]="{ 'is-invalid': submitted && f.product_tax.errors }"
-                        formControlName="product_tax" type="number" min="0" max="100" step="any" name="product_tax"
-                        id="product_tax" placeholder="Taux d'imposition" class="form-control">
-                    <!---->
-                </div>
-            </div>
-            <div class="form-group"><label for="warehouse_id" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Entrepôt
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><select [ngClass]="{ 'is-invalid': submitted && f.warehouse_id.errors }"
-                        formControlName="warehouse_id" type="text" name="warehouse_id" id="warehouse_id" class="form-control">
-                        <option value="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Sélectionnez la maison</font>
-                            </font>
-                        </option>
-                        <option value="3">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Entrepot 09</font>
-                            </font>
-                        </option>
-                    
-                    </select>
-                    <!---->
-                </div>
-            </div>
-            <div class="form-group"><label for="product_details" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            détails du produit
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><textarea [ngClass]="{ 'is-invalid': submitted && f.product_details.errors }"
-                        formControlName="product_details" id="product_details" name="product_details" rows="3"
-                        placeholder="Entrer ..." class="form-control"></textarea></div>
-            </div>
-            <div class="form-group"><label for="product_detailsforinvoice" class="col-sm-4 control-label">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            Détails de la facture
-                        </font>
-                    </font>
-                </label>
-                <div class="col-sm-8"><textarea [ngClass]="{ 'is-invalid': submitted && f.product_detailsforinvoice.errors }"
-                        formControlName="product_detailsforinvoice" id="product_detailsforinvoice" name="product_detailsforinvoice"
-                        rows="3"
-                        placeholder="Entrer ..." class="form-control"></textarea></div>
-            </div>
+          </div>
         </div>
+      </div>
+      <!---->
+      <div class="form-group">
+        <label for="supplier_id" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Supplier </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <select
+            [ngClass]="{ 'is-invalid': submitted && f.supplier_id.errors }"
+            formControlName="supplier_id"
+            name="supplier_id"
+            id="supplier_id"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option value="0">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Alpha</font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.supplier_id.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.supplier_id.errors.required">
+              {{ msg.validations.supplier_id }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="product_unit" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Unit </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            [ngClass]="{ 'is-invalid': submitted && f.product_unit.errors }"
+            formControlName="product_unit"
+            type="number"
+            name="product_unit"
+            id="product_unit"
+            placeholder="Unité de produit"
+            class="form-control"
+          />
+          <!---->
+          <div
+            *ngIf="submitted && f.product_unit.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.product_unit.errors.required">
+              {{ msg.validations.product_unit }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="product_alertquantity" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Quantity </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            [ngClass]="{
+              'is-invalid': submitted && f.product_alertquantity.errors
+            }"
+            formControlName="product_alertquantity"
+            type="number"
+            name="product_alertquantity"
+            id="product_alertquantity"
+            placeholder="Alerte produit"
+            class="form-control"
+          />
+          <!---->
+          <div
+            *ngIf="submitted && f.product_alertquantity.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.product_alertquantity.errors.required">
+              {{ msg.validations.product_alertquantity }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="product_supplierPrice" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Cost </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            [ngClass]="{
+              'is-invalid': submitted && f.product_supplierPrice.errors
+            }"
+            formControlName="product_supplierPrice"
+            type="number"
+            min="0"
+            max="10000000"
+            step="any"
+            name="product_supplierPrice"
+            id="product_supplierPrice"
+            placeholder="Prix ​​de revient"
+            class="form-control"
+          />
+          <!---->
+          <div
+            *ngIf="submitted && f.product_supplierPrice.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.product_supplierPrice.errors.required">
+              {{ msg.validations.product_supplierPrice }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="form-group">
+        <label for="product_image" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Image du produit </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <div><input type="file" accept="image/*" name="product_image" /></div>
+          
+        </div>
+      </div>-->
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group">
-                <button (click)="add()" type="button" class="btn btn-info">
-                    <i class="fas fa-save"></i>
-                    Sauvegarder
-                </button>
-                <button (click)="reset()" type="button" class="btn btn-danger">
-                    <i class="fas fa-times"></i>
-                    Annuler
-                </button>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="product_sellPrice" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Price </font> </font
+          ><i
+            aria-hidden="true"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            class="fa fa-asterisk text-danger require"
+            data-original-title="Required"
+          ></i>
+        </label>
+        <div class="col-sm-8">
+          <input
+            [ngClass]="{
+              'is-invalid': submitted && f.product_sellPrice.errors
+            }"
+            formControlName="product_sellPrice"
+            type="number"
+            min="0"
+            max="10000000"
+            step="any"
+            name="product_sellPrice"
+            id="product_sellPrice"
+            placeholder="Prix ​​de vente"
+            class="form-control"
+          />
+          <!---->
+          <div
+            *ngIf="submitted && f.product_sellPrice.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.product_sellPrice.errors.required">
+              {{ msg.validations.product_sellPrice }}
             </div>
+          </div>
         </div>
-        <div class="col-sm-6"></div>
+      </div>
+      <div class="form-group">
+        <label for="product_code" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Code </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <input
+            [ngClass]="{ 'is-invalid': submitted && f.product_code.errors }"
+            formControlName="product_code"
+            type="text"
+            name="product_code"
+            id="product_code"
+            placeholder="Code produit"
+            class="form-control"
+          />
+        </div>
+        <!---->
+        <div
+          *ngIf="submitted && f.product_code.errors"
+          class="alert alert-danger"
+        >
+          <div *ngIf="submitted && f.product_code.errors.required">
+            {{ msg.validations.product_code }}
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="product_tax" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Tax rate </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <input
+            [ngClass]="{ 'is-invalid': submitted && f.product_tax.errors }"
+            formControlName="product_tax"
+            type="number"
+            min="0"
+            max="100"
+            step="any"
+            name="product_tax"
+            id="product_tax"
+            placeholder="Taux d'imposition"
+            class="form-control"
+          />
+          <!---->
+          <div
+            *ngIf="submitted && f.product_tax.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.product_tax.errors.required">
+              {{ msg.validations.product_tax }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="warehouse_id" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Warehouse </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <select
+            [ngClass]="{ 'is-invalid': submitted && f.warehouse_id.errors }"
+            formControlName="warehouse_id"
+            type="text"
+            name="warehouse_id"
+            id="warehouse_id"
+            class="form-control"
+          >
+            <option value="">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Select</font>
+              </font>
+            </option>
+            <option value="0">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">Warehouse 009</font>
+              </font>
+            </option>
+          </select>
+          <!---->
+          <div
+            *ngIf="submitted && f.warehouse_id.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.warehouse_id.errors.required">
+              {{ msg.validations.warehouse_id }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="product_details" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Details product </font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <textarea
+            [ngClass]="{ 'is-invalid': submitted && f.product_details.errors }"
+            formControlName="product_details"
+            id="product_details"
+            name="product_details"
+            rows="3"
+            placeholder="Entrer ..."
+            class="form-control"
+          ></textarea>
+          <div
+            *ngIf="submitted && f.product_details.errors"
+            class="alert alert-danger"
+          >
+            <div *ngIf="submitted && f.product_details.errors.required">
+              {{ msg.validations.product_details }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="product_detailsforinvoice" class="col-sm-4 control-label">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit"> Details Invoice</font>
+          </font>
+        </label>
+        <div class="col-sm-8">
+          <textarea
+            [ngClass]="{
+              'is-invalid': submitted && f.product_detailsforinvoice.errors
+            }"
+            formControlName="product_detailsforinvoice"
+            id="product_detailsforinvoice"
+            name="product_detailsforinvoice"
+            rows="3"
+            placeholder="Entrer ..."
+            class="form-control"
+          ></textarea>
+          <div
+            *ngIf="submitted && f.product_detailsforinvoice.errors"
+            class="alert alert-danger"
+          >
+            <div
+              *ngIf="submitted && f.product_detailsforinvoice.errors.required"
+            >
+              {{ msg.validations.product_detailsforinvoice }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <button (click)="add()" type="button" class="btn btn-info">
+          <i class="fas fa-save"></i>
+          Save
+        </button>
+        <button (click)="reset()" type="button" class="btn btn-danger">
+          <i class="fas fa-times"></i>
+          Cancel
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-6"></div>
+  </div>
 </form>

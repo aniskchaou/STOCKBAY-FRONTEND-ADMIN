@@ -1,39 +1,62 @@
 <div class="card">
   <!-- Card header -->
   <div class="card-header border-0">
-    <h3 class="mb-0">Catégories</h3>
+    <h3 class="mb-0">Categories</h3>
   </div>
   <!-- Light table -->
   <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-          <th scope="col" class="sort" data-sort="name">Nom</th>
-          <th scope="col" class="sort" data-sort="budget">Statut</th>
+          <th scope="col" class="sort" data-sort="name">Name</th>
+          <th scope="col" class="sort" data-sort="budget">Status</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr *ngFor="let c of categorys$">
-          <td scope="col" class="sort" data-sort="name">{{c.category_name}}</td>
-          <td scope="col" class="sort" data-sort="budget">{{c.status_id}}</td>
-          <td><button type="button" data-toggle="modal" (click)="edit(c.id)" data-target="#editCategory"
-              class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger btn-sm" (click)="delete(c.id)"><i
-                class="fas fa-trash-alt"></i></button>
+          <td scope="col" class="sort" data-sort="name">
+            {{ c.category_name }}
+          </td>
+          <td scope="col" class="sort" data-sort="budget">{{ c.status_id }}</td>
+          <td>
+            <!--<button
+              type="button"
+              data-toggle="modal"
+              (click)="edit(c.id)"
+              data-target="#editCategory"
+              class="btn btn-warning btn-sm"
+            >
+              <i class="fas fa-edit"></i>
+            </button>-->
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="delete(c.id)"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </td>
         </tr>
-
-
       </tbody>
+      <tfoot class="thead-light">
+        <tr>
+          <th scope="col" class="sort" data-sort="name">Name</th>
+          <th scope="col" class="sort" data-sort="budget">Status</th>
+          <th>Actions</th>
+        </tr>
+      </tfoot>
     </table>
-    <button type="button" data-toggle="modal" data-target="#addCategory" class="btn btn-success btn-sm"><i
-        class="fas fa-plus-circle"></i> Ajouter</button>
+    <button
+      type="button"
+      data-toggle="modal"
+      data-target="#addCategory"
+      class="btn btn-success btn-sm"
+    >
+      <i class="fas fa-plus-circle"></i> Create
+    </button>
 
     <app-modal-category></app-modal-category>
-
-
   </div>
   <!-- Card footer -->
-
 </div>

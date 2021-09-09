@@ -7,13 +7,14 @@ export default class CategoryMessage {
 
     confirmations = {
         'title': 'confirmation',
-        'add': 'catégorie a été ajouté avec succès',
+        'add': 'Category has been added',
         'edit': 'catégorie a été modifié avec succès',
-        'delete': 'catégorie a été supprimé avec succès'
+        'delete': 'Category has been removed'
     }
     validations = {
-        'purchase_invoiceNo': 'facture No doit etre definie.',
-        'date_buy': 'date achat doit etre definie.'
+           "category_name": "Category name is required",
+        "status_id": "Status is required",
+        "category_details": "details is required"
     }
 
     constructor() {
